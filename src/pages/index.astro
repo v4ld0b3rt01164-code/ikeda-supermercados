@@ -8,7 +8,7 @@ import Footer from '../components/Footer.astro';
   <Navbar />
 
   <main class="min-h-screen">
-    <section id="hero" class="min-h-screen w-full flex items-center bg-black px-6 md:px-12 pt-[100px] md:pt-[120px] relative overflow-hidden">
+    <section id="hero" class="min-h-screen w-full flex items-center bg-black relative overflow-hidden">
       <video 
         autoplay 
         loop 
@@ -21,17 +21,9 @@ import Footer from '../components/Footer.astro';
       
       <div class="absolute inset-0 bg-black/60"></div>
 
-      <div class="w-full max-w-7xl mx-auto relative z-10 flex flex-col items-center justify-center text-center">
-        <div class="reveal-scale mb-8">
-          <img 
-            src="/images/logo.png" 
-            alt="Ikeda Supermercados" 
-            class="h-24 md:h-32 lg:h-40 w-auto drop-shadow-2xl"
-          />
-        </div>
-        
-        <h1 class="text-4xl md:text-5xl lg:text-[64px] font-bold text-white leading-[1.1] reveal delay-100">
-          Da nossa família<br />para a sua
+      <div class="w-full mx-auto relative z-10 flex flex-col items-center justify-center text-center px-6">
+        <h1 class="text-4xl md:text-5xl lg:text-[64px] font-light text-white leading-[1.1] reveal delay-100">
+          Da nossa família<br />para a sua<br />desde 1941
         </h1>
       </div>
     </section>
