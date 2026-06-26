@@ -31,9 +31,19 @@ const lojas = [
         loop 
         muted 
         playsinline
-        class="absolute inset-0 w-full h-full object-cover"
+        class="absolute inset-0 w-full h-full object-cover hidden md:block"
       >
         <source src="/hero-pc-compressed.mp4" type="video/mp4" />
+      </video>
+      
+      <video 
+        autoplay 
+        loop 
+        muted 
+        playsinline
+        class="absolute inset-0 w-full h-full object-cover md:hidden"
+      >
+        <source src="/hero-mobile.mp4" type="video/mp4" />
       </video>
       
       <div class="absolute inset-0 bg-black/60"></div>
