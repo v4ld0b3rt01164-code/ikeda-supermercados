@@ -163,3 +163,6 @@ Error: Failed to load url astro:server-app.js (resolved id: astro:server-app.js)
 [2m01:52:37[22m [34m[vite][39m program reload
 [2m01:52:44[22m [34m[vite][39m program reload
 [2m01:52:45[22m [34m[vite][39m program reload
+[2m01:53:57[22m [34m[watch][39m /src/layouts/Layout.astro?astro&type=style&index=0&lang.css
+[2m01:54:05[22m [34m[vite][39m program reload
+[2m01:54:06[22m [34m[vite][39m program reload
