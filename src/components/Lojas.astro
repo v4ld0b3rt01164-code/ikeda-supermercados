@@ -1,0 +1,76 @@
+---
+const lojas = [
+  {
+    nome: "Junqueirópolis",
+    endereco: "Rua Rui Barbosa, 481",
+    telefone: "(18) 3841-1326",
+    horarios: [
+      "Seg-Sex: 07:30 - 21:00",
+      "Sáb: 07:30 - 18:00"
+    ],
+    mapa: "https://maps.google.com/?q=Rua+Rui+Barbosa+481+Junqueirópolis+SP"
+  },
+  {
+    nome: "Dracena",
+    endereco: "Rua Messias Ferreira da Palma, 266",
+    telefone: "(18) 3822-3272",
+    horarios: [
+      "Seg-Sex: 07:30 - 21:00",
+      "Sáb: 07:30 - 18:00",
+      "Dom: 08:00 - 13:00"
+    ],
+    mapa: "https://maps.google.com/?q=Rua+Messias+Ferreira+da+Palma+266+Dracena+SP"
+  }
+];
+---
+
+<section id="lojas" class="min-h-screen w-full bg-surface px-6 md:px-12 py-20">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-12">
+      <span class="text-xs font-medium text-accent uppercase tracking-[3px] mb-4 block">
+        Nossas Lojas
+      </span>
+      <h2 class="text-3xl md:text-4xl font-bold text-text">
+        Onde nos encontrar
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {lojas.map((loja) => (
+        <div class="bg-white rounded-xl p-8 shadow-[0_4px_24px_rgba(0,0,0,0.06)] hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)] transition-all duration-300">
+          <h3 class="text-2xl font-bold text-text mb-4">{loja.nome}</h3>
+          
+          <div class="space-y-3 mb-6">
+            <div class="flex items-start gap-3">
+              <span class="text-lg mt-0.5">📍</span>
+              <span class="text-sm text-gray-500">{loja.endereco}</span>
+            </div>
+            
+            <div class="flex items-center gap-3">
+              <span class="text-lg">📞</span>
+              <span class="text-sm text-gray-500">{loja.telefone}</span>
+            </div>
+            
+            <div class="flex items-start gap-3">
+              <span class="text-lg mt-0.5">🕐</span>
+              <div class="text-sm text-gray-500">
+                {loja.horarios.map((horario) => (
+                  <div>{horario}</div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <a 
+            href={loja.mapa}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center px-6 py-3 border-2 border-accent text-accent text-sm font-semibold rounded-lg hover:bg-accent hover:text-white transition-colors duration-200"
+          >
+            Ver no Mapa
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

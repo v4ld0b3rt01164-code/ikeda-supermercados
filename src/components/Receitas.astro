@@ -1,0 +1,76 @@
+---
+const receitas = [
+  {
+    nome: "Sushi Caseiro",
+    categoria: "Japonesa",
+    tempo: "45 min",
+    descricao: "Arroz temperado com peixe fresco e vegetais selecionados",
+    imagem: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600&h=500&fit=crop"
+  },
+  {
+    nome: "Frango Xadrez",
+    categoria: "Main Course",
+    tempo: "30 min",
+    descricao: "Frango com legumes crocantes e molho especial da casa",
+    imagem: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=600&h=500&fit=crop"
+  },
+  {
+    nome: "Temaki de Salmão",
+    categoria: "Japonesa",
+    tempo: "20 min",
+    descricao: "Cones de alga recheados com salmão fresco e cream cheese",
+    imagem: "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=600&h=500&fit=crop"
+  }
+];
+---
+
+<section id="receitas" class="min-h-screen w-full bg-surface px-6 md:px-12 py-20">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-12">
+      <span class="text-xs font-medium text-accent uppercase tracking-[3px] mb-4 block">
+        Receitas
+      </span>
+      <h2 class="text-3xl md:text-4xl font-bold text-text mb-2">
+        Inspirações culinárias
+      </h2>
+      <p class="text-base text-gray-500">
+        Receitas fáceis com ingredientes frescos
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {receitas.map((receita) => (
+        <div class="bg-white rounded-xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.06)] hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)] transition-all duration-300">
+          <div class="h-60 overflow-hidden relative">
+            <img 
+              src={receita.imagem} 
+              alt={receita.nome} 
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-400"
+            />
+            <span class="absolute top-4 right-4 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full text-xs font-medium text-text">
+              ⏱️ {receita.tempo}
+            </span>
+          </div>
+          
+          <div class="p-6">
+            <span class="text-xs font-medium text-accent uppercase">
+              {receita.categoria}
+            </span>
+            
+            <h3 class="text-xl font-bold text-text mt-1 mb-2 leading-tight">
+              {receita.nome}
+            </h3>
+            
+            <p class="text-sm text-gray-500 leading-relaxed mb-4 line-clamp-2">
+              {receita.descricao}
+            </p>
+
+            <a href="#" class="text-sm font-semibold text-accent hover:underline">
+              Ver receita →
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,82 @@
+---
+---
+
+<section id="contato" class="min-h-screen w-full bg-text px-6 md:px-12 py-20">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 w-full max-w-7xl mx-auto">
+    <div class="flex flex-col">
+      <span class="text-xs font-medium text-accent uppercase tracking-[3px] mb-4">
+        Contato
+      </span>
+      
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+        Fale Conosco
+      </h2>
+      
+      <p class="text-base text-gray-400 mb-10">
+        Estamos prontos para atender você
+      </p>
+
+      <form class="flex flex-col gap-5">
+        <div>
+          <label class="block text-sm font-medium text-white mb-2">Nome</label>
+          <input 
+            type="text" 
+            class="w-full px-4 py-4 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-accent transition-colors"
+            placeholder="Seu nome"
+          />
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-white mb-2">Email</label>
+          <input 
+            type="email" 
+            class="w-full px-4 py-4 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-accent transition-colors"
+            placeholder="seu@email.com"
+          />
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-white mb-2">Mensagem</label>
+          <textarea 
+            class="w-full px-4 py-4 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-accent transition-colors resize-y h-32"
+            placeholder="Sua mensagem..."
+          ></textarea>
+        </div>
+
+        <button 
+          type="submit" 
+          class="w-full py-4 bg-accent text-white text-base font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200"
+        >
+          Enviar Mensagem
+        </button>
+      </form>
+    </div>
+
+    <div class="flex flex-col justify-center">
+      <div class="p-8 rounded-xl border border-whatsapp/30 bg-whatsapp/10 text-center mb-12">
+        <span class="text-5xl block mb-4">📱</span>
+        <h3 class="text-2xl font-bold text-white mb-2">WhatsApp</h3>
+        <p class="text-base text-gray-400 mb-4">Fale conosco pelo WhatsApp</p>
+        <span class="block text-xl font-bold text-whatsapp mb-6">+55 18 99737-4186</span>
+        <a 
+          href="https://wa.me/5518997374186"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex px-8 py-3.5 bg-whatsapp text-white text-base font-semibold rounded-lg hover:bg-[#128c7e] transition-colors duration-200"
+        >
+          Abrir WhatsApp
+        </a>
+      </div>
+
+      <div class="text-center">
+        <p class="text-sm text-gray-500">
+          © 2026 Ikeda Supermercados. Todos os direitos reservados.
+        </p>
+        <div class="flex justify-center gap-6 mt-4">
+          <a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Política de Privacidade</a>
+          <a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Termos de Uso</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

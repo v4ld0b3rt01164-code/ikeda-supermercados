@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Sobre from '../components/Sobre.astro';
+import Lojas from '../components/Lojas.astro';
+import Ofertas from '../components/Ofertas.astro';
+import Receitas from '../components/Receitas.astro';
+import RedesSociais from '../components/RedesSociais.astro';
+import Contato from '../components/Contato.astro';
+---
+
+<Layout title="Ikeda Supermercados | Da nossa família para a sua">
+  <Navbar />
+  
+  <main class="horizontal-scroll">
+    <Hero />
+    <Sobre />
+    <Lojas />
+    <Ofertas />
+    <Receitas />
+    <RedesSociais />
+    <Contato />
+  </main>
+</Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          targetElement.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'nearest',
+            inline: 'start'
+          });
+        }
+      });
+    });
+  });
+</script>
