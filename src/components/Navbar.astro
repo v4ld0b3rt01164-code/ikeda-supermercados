@@ -32,9 +32,53 @@
     <img src="/images/ifood.png" alt="iFood" class="h-5 w-auto" />
   </a>
 
-  <button class="lg:hidden ml-auto p-2" aria-label="Menu">
-    <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <button id="menu-toggle" class="lg:hidden ml-auto p-2" aria-label="Menu">
+    <svg id="menu-icon-open" class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+    <svg id="menu-icon-close" class="w-7 h-7 text-primary hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
     </svg>
   </button>
 </nav>
+
+<div id="mobile-menu" class="fixed inset-0 z-40 bg-white pt-[100px] md:pt-[120px] hidden flex-col items-center justify-center gap-6 lg:hidden">
+  <a href="/" class="text-lg font-semibold text-text hover:text-primary transition-colors">Início</a>
+  <a href="/lojas" class="text-lg font-semibold text-text hover:text-primary transition-colors">Lojas</a>
+  <a href="/ofertas" class="text-lg font-semibold text-text hover:text-primary transition-colors">Ofertas</a>
+  <a href="/campanhas" class="text-lg font-semibold text-text hover:text-primary transition-colors">Campanhas</a>
+  <a href="/receitas" class="text-lg font-semibold text-text hover:text-primary transition-colors">Receitas</a>
+  <a href="/cartao-fidelidade" class="text-lg font-semibold text-text hover:text-primary transition-colors">Cartão Fidelidade</a>
+  <a href="/contato" class="text-lg font-semibold text-text hover:text-primary transition-colors">Contato</a>
+  <a href="/institucional" class="text-lg font-semibold text-text hover:text-primary transition-colors">Nossa História</a>
+  <a 
+    href="https://www.ifood.com.br/delivery/dracena-sp/supermercados-ikeda-centro/521de33b-9449-43be-9c61-97b76c4d78d2" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    class="btn-secondary text-base mt-4"
+  >
+    Compre Online
+  </a>
+</div>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = menu?.classList.contains('flex');
+    if (isOpen) {
+      menu?.classList.add('hidden');
+      menu?.classList.remove('flex');
+      iconOpen?.classList.remove('hidden');
+      iconClose?.classList.add('hidden');
+    } else {
+      menu?.classList.remove('hidden');
+      menu?.classList.add('flex');
+      iconOpen?.classList.add('hidden');
+      iconClose?.classList.remove('hidden');
+    }
+  });
+</script>
