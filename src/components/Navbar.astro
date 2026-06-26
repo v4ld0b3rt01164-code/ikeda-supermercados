@@ -1,33 +1,45 @@
 ---
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 h-[72px] flex items-center px-6 md:px-12 bg-white/80 backdrop-blur-md border-b border-border">
+<nav class="fixed top-0 left-0 right-0 z-50 h-[100px] md:h-[120px] flex items-center px-6 md:px-12 bg-white/90 backdrop-blur-lg border-b-2 border-secondary shadow-lg">
   <div class="flex items-center gap-12">
-    <a href="/" class="flex items-center">
-      <span class="text-xl font-bold text-text">Ikeda</span>
-      <span class="text-xl font-normal text-accent ml-1">Supermercados</span>
+    <a href="/" class="flex items-center transition-transform duration-300 hover:scale-110">
+      <img src="/images/logo-3d.png" alt="Ikeda Supermercados" class="h-20 md:h-24 w-auto drop-shadow-lg" />
     </a>
     
-    <div class="hidden md:flex items-center gap-8">
-      <a href="#sobre" class="text-sm font-medium text-text hover:text-accent transition-colors duration-200">Sobre</a>
-      <a href="#lojas" class="text-sm font-medium text-text hover:text-accent transition-colors duration-200">Lojas</a>
-      <a href="#ofertas" class="text-sm font-medium text-text hover:text-accent transition-colors duration-200">Ofertas</a>
-      <a href="#receitas" class="text-sm font-medium text-text hover:text-accent transition-colors duration-200">Receitas</a>
-      <a href="#contato" class="text-sm font-medium text-text hover:text-accent transition-colors duration-200">Contato</a>
+    <div class="hidden lg:flex items-center gap-6">
+      <a href="/" class="text-sm font-semibold text-text hover:text-primary transition-colors duration-200">Início</a>
+      <a href="/institucional" class="text-sm font-semibold text-text hover:text-primary transition-colors duration-200">Institucional</a>
+      <a href="/lojas" class="text-sm font-semibold text-text hover:text-primary transition-colors duration-200">Lojas</a>
+      <a href="/ofertas" class="text-sm font-semibold text-text hover:text-primary transition-colors duration-200">Ofertas</a>
+      <a href="/campanhas" class="text-sm font-semibold text-text hover:text-primary transition-colors duration-200">Campanhas</a>
+      <a href="/receitas" class="text-sm font-semibold text-text hover:text-primary transition-colors duration-200">Receitas</a>
+      <a href="/cartao-fidelidade" class="text-sm font-semibold text-text hover:text-primary transition-colors duration-200">Cartão Fidelidade</a>
+      <a href="/trabalhe-conosco" class="text-sm font-semibold text-text hover:text-primary transition-colors duration-200">Trabalhe Conosco</a>
+      <a href="/contato" class="text-sm font-semibold text-text hover:text-primary transition-colors duration-200">Contato</a>
     </div>
   </div>
+
+  <a 
+    href="https://www.ifood.com.br/delivery/dracena-sp/supermercados-ikeda-centro/521de33b-9449-43be-9c61-97b76c4d78d2" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    class="hidden lg:flex ml-auto btn-secondary text-sm"
+  >
+    🛒 Loja Online
+  </a>
 
   <a 
     href="https://wa.me/5518997374186" 
     target="_blank" 
     rel="noopener noreferrer"
-    class="hidden md:flex ml-auto px-6 py-2.5 bg-accent text-white text-sm font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200"
+    class="hidden lg:flex ml-4 btn-primary text-sm"
   >
-    WhatsApp
+    📱 WhatsApp
   </a>
 
-  <button class="md:hidden ml-auto p-2" aria-label="Menu">
-    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <button class="lg:hidden ml-auto p-2" aria-label="Menu">
+    <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
     </svg>
   </button>
