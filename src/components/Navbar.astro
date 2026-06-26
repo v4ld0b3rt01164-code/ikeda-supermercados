@@ -1,21 +1,25 @@
 ---
+const isHome = Astro.url.pathname === '/';
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 h-[100px] md:h-[120px] flex items-center px-6 md:px-12">
+<nav id="navbar" class:list={[
+  "fixed top-0 left-0 right-0 z-50 h-[100px] md:h-[120px] flex items-center px-6 md:px-12 transition-all duration-300",
+  isHome ? "bg-transparent" : "bg-white/90 backdrop-blur-lg border-b-2 border-secondary shadow-lg"
+]}>
   <div class="flex items-center gap-12">
     <a href="/" class="flex items-center transition-transform duration-300 hover:scale-110">
-      <img src="/images/logo-3d.png" alt="Ikeda Supermercados" class="h-20 md:h-24 w-auto drop-shadow-lg" />
+      <img src="/images/logo.png" alt="Ikeda Supermercados" class="h-20 md:h-24 w-auto" id="nav-logo" />
     </a>
     
     <div class="hidden lg:flex items-center gap-6">
-      <a href="/" class="text-sm font-semibold text-white hover:text-secondary transition-colors duration-200">Início</a>
-      <a href="/lojas" class="text-sm font-semibold text-white hover:text-secondary transition-colors duration-200">Lojas</a>
-      <a href="/ofertas" class="text-sm font-semibold text-white hover:text-secondary transition-colors duration-200">Ofertas</a>
-      <a href="/campanhas" class="text-sm font-semibold text-white hover:text-secondary transition-colors duration-200">Campanhas</a>
-      <a href="/receitas" class="text-sm font-semibold text-white hover:text-secondary transition-colors duration-200">Receitas</a>
-      <a href="/cartao-fidelidade" class="text-sm font-semibold text-white hover:text-secondary transition-colors duration-200">Cartão Fidelidade</a>
-      <a href="/contato" class="text-sm font-semibold text-white hover:text-secondary transition-colors duration-200">Contato</a>
-      <a href="/institucional" class="text-sm font-semibold text-white hover:text-secondary transition-colors duration-200">Nossa História</a>
+      <a href="/" class:list={["text-sm font-semibold transition-colors duration-200", isHome ? "text-white hover:text-secondary" : "text-text hover:text-primary"]}>Início</a>
+      <a href="/lojas" class:list={["text-sm font-semibold transition-colors duration-200", isHome ? "text-white hover:text-secondary" : "text-text hover:text-primary"]}>Lojas</a>
+      <a href="/ofertas" class:list={["text-sm font-semibold transition-colors duration-200", isHome ? "text-white hover:text-secondary" : "text-text hover:text-primary"]}>Ofertas</a>
+      <a href="/campanhas" class:list={["text-sm font-semibold transition-colors duration-200", isHome ? "text-white hover:text-secondary" : "text-text hover:text-primary"]}>Campanhas</a>
+      <a href="/receitas" class:list={["text-sm font-semibold transition-colors duration-200", isHome ? "text-white hover:text-secondary" : "text-text hover:text-primary"]}>Receitas</a>
+      <a href="/cartao-fidelidade" class:list={["text-sm font-semibold transition-colors duration-200", isHome ? "text-white hover:text-secondary" : "text-text hover:text-primary"]}>Cartão Fidelidade</a>
+      <a href="/contato" class:list={["text-sm font-semibold transition-colors duration-200", isHome ? "text-white hover:text-secondary" : "text-text hover:text-primary"]}>Contato</a>
+      <a href="/institucional" class:list={["text-sm font-semibold transition-colors duration-200", isHome ? "text-white hover:text-secondary" : "text-text hover:text-primary"]}>Nossa História</a>
     </div>
   </div>
 
@@ -33,10 +37,10 @@
   </a>
 
   <button id="menu-toggle" class="lg:hidden ml-auto p-2" aria-label="Menu">
-    <svg id="menu-icon-open" class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <svg id="menu-icon-open" class:list={["w-7 h-7", isHome ? "text-white" : "text-primary"]} fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
     </svg>
-    <svg id="menu-icon-close" class="w-7 h-7 text-white hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <svg id="menu-icon-close" class:list={["w-7 h-7 hidden", isHome ? "text-white" : "text-primary"]} fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
     </svg>
   </button>
@@ -61,7 +65,44 @@
   </a>
 </div>
 
-<script>
+<script is:inline>
+  const isHomePage = window.location.pathname === '/';
+  
+  if (isHomePage) {
+    const navbar = document.getElementById('navbar');
+    const navLogo = document.getElementById('nav-logo');
+    const links = navbar?.querySelectorAll('.hidden.lg\\:flex a');
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar?.classList.remove('bg-transparent');
+        navbar?.classList.add('bg-white/90', 'backdrop-blur-lg', 'border-b-2', 'border-secondary', 'shadow-lg');
+        links?.forEach(link => {
+          link.classList.remove('text-white');
+          link.classList.add('text-text');
+        });
+        menuIconOpen?.classList.remove('text-white');
+        menuIconOpen?.classList.add('text-primary');
+        menuIconClose?.classList.remove('text-white');
+        menuIconClose?.classList.add('text-primary');
+      } else {
+        navbar?.classList.add('bg-transparent');
+        navbar?.classList.remove('bg-white/90', 'backdrop-blur-lg', 'border-b-2', 'border-secondary', 'shadow-lg');
+        links?.forEach(link => {
+          link.classList.remove('text-text');
+          link.classList.add('text-white');
+        });
+        menuIconOpen?.classList.add('text-white');
+        menuIconOpen?.classList.remove('text-primary');
+        menuIconClose?.classList.add('text-white');
+        menuIconClose?.classList.remove('text-primary');
+      }
+    });
+  }
+
   const toggle = document.getElementById('menu-toggle');
   const menu = document.getElementById('mobile-menu');
   const iconOpen = document.getElementById('menu-icon-open');
