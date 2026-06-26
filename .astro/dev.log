@@ -114,3 +114,9 @@ Error: Failed to load url astro:server-app.js (resolved id: astro:server-app.js)
 [2m00:56:22[22m [34m[watch][39m /src/layouts/Layout.astro?astro&type=style&index=0&lang.css
 [2m00:56:34[22m [34m[watch][39m /src/layouts/Layout.astro?astro&type=style&index=0&lang.css
 [2m00:56:48[22m [34m[vite][39m program reload
+[2m00:56:51[22m [34m[vite][39m program reload
+[2m01:05:55[22m [34m[watch][39m src/pages/index.astro
+[2m01:05:55[22m [34m[watch][39m src/pages/index.astro
+[2m01:06:09[22m [34m[watch][39m src/pages/index.astro
+[2m01:06:17[22m [34m[vite][39m program reload
+[2m01:06:18[22m [34m[vite][39m program reload
