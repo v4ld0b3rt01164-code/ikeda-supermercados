@@ -11,3 +11,8 @@
 [2m22:32:39[22m [34m[200][39m / [2m11ms[22m
 [2m22:32:44[22m [34m[200][39m / [2m11ms[22m
 [2m22:38:37[22m [34m[200][39m / [2m211ms[22m
+[2m23:08:36[22m [34m[vite][39m program reload
+[31m[1m23:08:36[22m [ERROR] [vite][39m An error happened during full reload
+Failed to load url astro:server-app.js (resolved id: astro:server-app.js). Does the file exist?
+Error: Failed to load url astro:server-app.js (resolved id: astro:server-app.js). Does the file exist?
+    at loadAndTransform (file:///C:/Users/Valdo/Desktop/SITES/DEV/Ikeda/ikeda-site/node_modules/vite/dist/node/chunks/node.js:19714:31)
