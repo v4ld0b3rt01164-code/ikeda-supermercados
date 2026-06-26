@@ -11,15 +11,15 @@ const isHome = Astro.url.pathname === '/';
       <img src="/images/logo.png" alt="Ikeda Supermercados" class="h-20 md:h-24 w-auto" id="nav-logo" />
     </a>
     
-    <div class="hidden lg:flex items-center gap-6">
-      <a href="/" class:list={["text-sm font-semibold transition-colors duration-200", isHome ? "text-white hover:text-secondary" : "text-text hover:text-primary"]}>Início</a>
-      <a href="/lojas" class:list={["text-sm font-semibold transition-colors duration-200", isHome ? "text-white hover:text-secondary" : "text-text hover:text-primary"]}>Lojas</a>
-      <a href="/ofertas" class:list={["text-sm font-semibold transition-colors duration-200", isHome ? "text-white hover:text-secondary" : "text-text hover:text-primary"]}>Ofertas</a>
-      <a href="/campanhas" class:list={["text-sm font-semibold transition-colors duration-200", isHome ? "text-white hover:text-secondary" : "text-text hover:text-primary"]}>Campanhas</a>
-      <a href="/receitas" class:list={["text-sm font-semibold transition-colors duration-200", isHome ? "text-white hover:text-secondary" : "text-text hover:text-primary"]}>Receitas</a>
-      <a href="/cartao-fidelidade" class:list={["text-sm font-semibold transition-colors duration-200", isHome ? "text-white hover:text-secondary" : "text-text hover:text-primary"]}>Cartão Fidelidade</a>
-      <a href="/contato" class:list={["text-sm font-semibold transition-colors duration-200", isHome ? "text-white hover:text-secondary" : "text-text hover:text-primary"]}>Contato</a>
-      <a href="/institucional" class:list={["text-sm font-semibold transition-colors duration-200", isHome ? "text-white hover:text-secondary" : "text-text hover:text-primary"]}>Nossa História</a>
+    <div class="hidden lg:flex items-center gap-6 ml-auto">
+      <a href="/" class:list={["text-sm font-semibold transition-colors duration-200 border-b-2 border-transparent hover:border-secondary pb-0.5", isHome ? "text-white hover:text-white" : "text-text hover:text-text"]}>Início</a>
+      <a href="/lojas" class:list={["text-sm font-semibold transition-colors duration-200 border-b-2 border-transparent hover:border-secondary pb-0.5", isHome ? "text-white hover:text-white" : "text-text hover:text-text"]}>Lojas</a>
+      <a href="/ofertas" class:list={["text-sm font-semibold transition-colors duration-200 border-b-2 border-transparent hover:border-secondary pb-0.5", isHome ? "text-white hover:text-white" : "text-text hover:text-text"]}>Ofertas</a>
+      <a href="/campanhas" class:list={["text-sm font-semibold transition-colors duration-200 border-b-2 border-transparent hover:border-secondary pb-0.5", isHome ? "text-white hover:text-white" : "text-text hover:text-text"]}>Campanhas</a>
+      <a href="/receitas" class:list={["text-sm font-semibold transition-colors duration-200 border-b-2 border-transparent hover:border-secondary pb-0.5", isHome ? "text-white hover:text-white" : "text-text hover:text-text"]}>Receitas</a>
+      <a href="/cartao-fidelidade" class:list={["text-sm font-semibold transition-colors duration-200 border-b-2 border-transparent hover:border-secondary pb-0.5", isHome ? "text-white hover:text-white" : "text-text hover:text-text"]}>Cartão Fidelidade</a>
+      <a href="/contato" class:list={["text-sm font-semibold transition-colors duration-200 border-b-2 border-transparent hover:border-secondary pb-0.5", isHome ? "text-white hover:text-white" : "text-text hover:text-text"]}>Contato</a>
+      <a href="/institucional" class:list={["text-sm font-semibold transition-colors duration-200 border-b-2 border-transparent hover:border-secondary pb-0.5", isHome ? "text-white hover:text-white" : "text-text hover:text-text"]}>Nossa História</a>
     </div>
   </div>
 
