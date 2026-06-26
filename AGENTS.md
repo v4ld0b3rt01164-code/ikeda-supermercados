@@ -65,6 +65,7 @@ ikeda-site/
 - **Styling**: Tailwind CSS v4
 - **Language**: TypeScript
 - **Deployment**: Cloudflare Pages
+- **Animations**: framer-motion
 
 ## Commands
 
@@ -97,26 +98,40 @@ npx wrangler pages deploy dist --project-name=ikeda-supermercados --branch=main 
 
 ## Key Features
 
-1. **Hero Section**: Video background (different for mobile/desktop)
-2. **Responsive Navigation**: Transparent on home (scroll effect), white on other pages
-3. **Mobile Menu**: Full-screen overlay with hamburger toggle
-4. **Video Optimization**: Compressed MP4 with H.264, CRF 23, no audio
+1. **Hero Section**: Video background (different for mobile/desktop), dark overlay, Dancing Script font
+2. **Responsive Navigation**: 
+   - Desktop: transparent on home (scroll effect), white on other pages, items right-aligned with yellow underline hover
+   - Mobile: logo centered at top (h-16), hamburger menu with full-screen overlay
+3. **Logo Sizes**: NAV logo h-[76px] desktop / h-16 mobile; Hero logo h-[96px] desktop / h-24 mobile
+4. **Mobile Menu**: Full-screen overlay with hamburger toggle, iFood logo + cart icon on button
+5. **Footer**: Yellow background (`bg-secondary`) with black text
+6. **Cards**: White background on blue sections
+7. **iOS/iPhone Compatibility**: 
+   - `apple-mobile-web-app-capable`, `viewport-fit=cover`, safe-area insets
+   - Video transform fix (translate3d(0,0,0))
+   - `playsinline` attribute on hero videos
+8. **Video Optimization**: Compressed MP4 with H.264, CRF 23, no audio, faststart
+9. **Campanhas Grid**: Full images without cropping (object-contain)
 
 ## Deployment
 
-The site is deployed to Cloudflare Pages:
 - **Production URL**: https://ikeda-supermercados.pages.dev
+- **GitHub**: https://github.com/v4ld0b3rt0164-code/ikeda-supermercados
 - **Production Branch**: main
 - **Build Command**: `npm run build`
 - **Output Directory**: `dist`
 
 ## Content
 
+- **Home**: Hero videos, lojas cards, features grid, Nossa História section (ikeda.jpg)
 - **Receitas**: 4 real recipes from original site
 - **Lojas**: 2 physical stores (Junqueirópolis and Dracena)
 - **Ofertas**: FlipHTML5 iframe for weekly flyer
-- **Campanhas**: 4 historical campaigns
-- **Institucional**: Full company history since 1941
+- **Campanhas**: 4 historical campaigns (vinho-crevelim, super-coffee, caminhao-de-premios, toda-mae-merece)
+- **Institucional**: Full company history since 1929
+- **Cartão Fidelidade**: Cadastro form
+- **Trabalhe Conosco**: Job application form
+- **Contato**: Contact form with loja select
 
 ## Contact Information
 
@@ -124,6 +139,7 @@ The site is deployed to Cloudflare Pages:
 - **iFood**: https://www.ifood.com.br/delivery/dracena-sp/supermercados-ikeda-centro/521de33b-9449-43be-9c61-97b76c4d78d2
 - **Instagram**: @stilluspropaganda
 - **Facebook**: facebook.com/ikedaDracena
+- **FlipHTML5 Folheto**: https://online.fliphtml5.com/ikedajunqueiradracena/kttj/
 
 ## Store Locations
 
