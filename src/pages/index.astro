@@ -1,47 +1,141 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
-import Hero from '../components/Hero.astro';
-import Sobre from '../components/Sobre.astro';
-import Lojas from '../components/Lojas.astro';
-import Ofertas from '../components/Ofertas.astro';
-import Receitas from '../components/Receitas.astro';
-import RedesSociais from '../components/RedesSociais.astro';
-import Contato from '../components/Contato.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Ikeda Supermercados | Da nossa família para a sua">
   <Navbar />
-  
-  <main class="horizontal-scroll">
-    <Hero />
-    <Sobre />
-    <Lojas />
-    <Ofertas />
-    <Receitas />
-    <RedesSociais />
-    <Contato />
-  </main>
-</Layout>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('nav a[href^="#"]');
-    
-    navLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
+  <main class="min-h-screen">
+    <section id="hero" class="min-h-[80vh] w-full flex items-center bg-gradient-to-br from-primary via-blue-600 to-blue-800 px-6 md:px-12 pt-[120px] relative overflow-hidden">
+      <div class="absolute inset-0 opacity-20">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-secondary rounded-full blur-3xl float-animation"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-secondary rounded-full blur-3xl float-animation" style="animation-delay: 1s;"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 w-full max-w-7xl mx-auto relative z-10">
+        <div class="flex flex-col justify-center order-2 lg:order-1">
+          <span class="text-sm font-bold text-secondary uppercase tracking-[3px] mb-4 reveal">
+            Supermercados Ikeda
+          </span>
+          
+          <h1 class="text-4xl md:text-5xl lg:text-[64px] font-bold text-white leading-[1.1] mb-6 reveal delay-100">
+            Da nossa família<br />para a sua
+          </h1>
+          
+          <p class="text-base md:text-lg text-blue-100 leading-relaxed mb-10 max-w-lg reveal delay-200">
+            Desde 1941, trazendo qualidade e tradição para as mesas das famílias de Junqueirópolis e Dracena.
+          </p>
+          
+          <div class="flex flex-wrap gap-4 reveal delay-300">
+            <a href="/ofertas" class="btn-secondary text-base">
+              Ver Ofertas
+            </a>
+            <a href="/lojas" class="px-8 py-4 bg-transparent border-2 border-white text-white text-base font-semibold rounded-xl hover:bg-white hover:text-primary transition-all duration-300">
+              Nossas Lojas
+            </a>
+          </div>
+        </div>
         
-        if (targetElement) {
-          targetElement.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'nearest',
-            inline: 'start'
-          });
-        }
-      });
-    });
-  });
-</script>
+        <div class="flex items-center justify-center order-1 lg:order-2 reveal-scale delay-200">
+          <div class="w-full aspect-square lg:aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border-4 border-secondary glow">
+            <img 
+              src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&h=1000&fit=crop" 
+              alt="Ikeda Supermercados" 
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 px-6 md:px-12 bg-bg">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16 reveal">
+          <span class="text-xs font-bold text-primary uppercase tracking-[3px] mb-4 block">
+            Bem-vindo
+          </span>
+          <h2 class="text-3xl md:text-4xl font-bold text-text mb-4">
+            Diariamente trabalhamos com muito amor e dedicação
+          </h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Para oferecer o que há de melhor da nossa família para a sua família.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <a href="/ofertas" class="card-highlighted p-6 text-center group">
+            <span class="text-5xl block mb-4 group-hover:scale-110 transition-transform">🏷️</span>
+            <h3 class="text-xl font-bold text-primary mb-2">Ofertas</h3>
+            <p class="text-sm text-gray-600">Confira nossas promoções da semana</p>
+          </a>
+
+          <a href="/receitas" class="card-highlighted p-6 text-center group">
+            <span class="text-5xl block mb-4 group-hover:scale-110 transition-transform">🍳</span>
+            <h3 class="text-xl font-bold text-primary mb-2">Receitas</h3>
+            <p class="text-sm text-gray-600">Inspirações culinárias deliciosas</p>
+          </a>
+
+          <a href="/lojas" class="card-highlighted p-6 text-center group">
+            <span class="text-5xl block mb-4 group-hover:scale-110 transition-transform">🏪</span>
+            <h3 class="text-xl font-bold text-primary mb-2">Lojas</h3>
+            <p class="text-sm text-gray-600">Encontre a Ikeda mais perto de você</p>
+          </a>
+
+          <a href="https://www.ifood.com.br/delivery/dracena-sp/supermercados-ikeda-centro/521de33b-9449-43be-9c61-97b76c4d78d2" target="_blank" class="card-highlighted p-6 text-center group">
+            <span class="text-5xl block mb-4 group-hover:scale-110 transition-transform">🛒</span>
+            <h3 class="text-xl font-bold text-primary mb-2">Loja Online</h3>
+            <p class="text-sm text-gray-600">Faça seu pedido pelo iFood</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 px-6 md:px-12 bg-gradient-to-br from-surface to-white">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="reveal-left">
+            <span class="text-xs font-bold text-primary uppercase tracking-[3px] mb-4 block">
+              Nossa História
+            </span>
+            <h2 class="text-3xl md:text-4xl font-bold text-text mb-6">
+              85+ Anos de Tradição
+            </h2>
+            <p class="text-gray-600 mb-8 leading-relaxed">
+              Fundada por Jorge Ikeda, imigrante japonês, a Ikeda Supermercados mantém viva a tradição de oferecer produtos frescos e de qualidade para as famílias da região.
+            </p>
+            <div class="flex gap-8">
+              <div>
+                <span class="text-4xl font-bold text-primary">85+</span>
+                <span class="block text-sm text-gray-500">Anos</span>
+              </div>
+              <div>
+                <span class="text-4xl font-bold text-secondary">2</span>
+                <span class="block text-sm text-gray-500">Lojas</span>
+              </div>
+              <div>
+                <span class="text-4xl font-bold text-primary">3</span>
+                <span class="block text-sm text-gray-500">Gerações</span>
+              </div>
+            </div>
+            <a href="/institucional" class="btn-primary inline-block mt-8">
+              Conheça Nossa História
+            </a>
+          </div>
+          <div class="reveal-right">
+            <div class="card-highlighted overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop" 
+                alt="Ikeda Supermercados" 
+                class="w-full h-80 object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

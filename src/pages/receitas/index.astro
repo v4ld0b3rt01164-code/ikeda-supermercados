@@ -1,0 +1,148 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const receitas = [
+  {
+    id: "torta-holandesa-com-nata",
+    nome: "Torta Holandesa com Nata",
+    imagem: "https://ikedasupermercados.com.br/uploads/receitas_20241230195126_foto-receita.jpg",
+    ingredientes: `Para o Creme:
+- 400g de nata
+- 1 lata de leite condensado
+- 1 caixinha de creme de leite
+
+Para a Montagem:
+- 1 copo de leite
+- 1 cálice de conhaque (opcional)
+- 1 pacote de bolacha Calypso ou Tortinhas
+- 1 pacote de bolacha maisena
+
+Para a Cobertura:
+- 1 caixinha de creme de leite
+- 150g de chocolate ao leite`,
+    modoPreparo: "Na batedeira, bata a nata em velocidade média até obter um creme fofo. Adicione o leite condensado e o creme de leite, misture bem. Em um refratário, faça uma camada de bolachas embebidas no leite com conhaque. Cubra com o creme. Repita as camadas até acabar os ingredientes. Para a cobertura, derreta o chocolate com o creme de leite e despeje por cima. Leve à geladeira por pelo menos 4 horas."
+  },
+  {
+    id: "salpicao",
+    nome: "Salpicão",
+    imagem: "https://ikedasupermercados.com.br/uploads/receitas_20241209212845_salpicao-de-natal-receita-toda-h.jpg",
+    ingredientes: `- 300g de frango cozido e desfiado
+- 100g de presunto cortado em palitos
+- 150g de muçarela cortada em palitos
+- 1 cenoura grande cortada em palitos
+- 2 batatas médias descascadas e cortadas em palitos
+- 1 caixinha de creme de leite
+- 200g de maionese
+- 1 fio de azeite
+- ½ cebola roxa cortada em meia-lua
+- ½ lata de milho-verde
+- ½ lata de ervilha
+- ½ pimentão verde cortado em cubos`,
+    modoPreparo: "Em uma tigela grande, misture o frango desfiado com a maionese e o creme de leite. Adicione o presunto, a muçarela, a cenoura e as batatas. Acrescente o milho, a ervilha e o pimentão. Tempere com azeite, sal e pimenta a gosto. Misture tudo delicadamente. Leve à geladeira por pelo menos 2 horas antes de servir."
+  },
+  {
+    id: "bolo-de-pessego",
+    nome: "Bolo de Pêssego",
+    imagem: "https://ikedasupermercados.com.br/uploads/receitas_20241125201126_bolo-pessego.jpg",
+    ingredientes: `- 1 3/4 chávenas de açúcar
+- 4 pêssegos descascados, sem caroço e cortados em 6 partes
+- 250g de manteiga sem sal e derretida
+- 1 colher de chá de extrato de baunilha
+- 225g de farinha de trigo
+- 3 colheres de chá de fermento
+- 60g de amêndoas
+- 6 ovos
+- 1/2 chávena de água
+- 1/2 colher de chá de sal`,
+    modoPreparo: "Pré-aqueça o forno a 180º C. Unte uma forma redonda com manteiga e polvilhe farinha. Em uma tigela, bata os ovos com o açúcar até obter uma mistura fofa. Adicione a manteiga derretida, a baunilha e a água. Misture a farinha de trigo, o fermento e o sal. Despeje na forma e distribua os pedaços de pêssego por cima. Asse por aproximadamente 40 minutos ou até que um palito inserido no centro saia limpo."
+  },
+  {
+    id: "bolo-de-limao-com-yogurte",
+    nome: "Bolo de Limão com Yogurte",
+    imagem: "https://ikedasupermercados.com.br/uploads/receitas_20180416152301_limao-com-cobertura.jpg",
+    ingredientes: `MASSA:
+- 4 ovos
+- 1 xícara (chá) de iogurte natural
+- 1 e 1/2 xícara (chá) de açúcar
+- 2 colheres (sopa) de raspas de limão
+- Suco de 1 limão
+- 1/2 xícara de óleo (de preferência de canola)
+- 2 xícaras de (chá) de farinha de trigo peneirada
+- 1 colher (sopa) de fermento em pó`,
+    modoPreparo: "Em um liquidificador, bata os ovos, o iogurte, o açúcar, as raspas de limão, o suco de limão e o óleo. Transfira para uma tigela e adicione a farinha de trigo peneirada e o fermento, mexendo delicadamente. Despeje em uma forma untada e enfarinhada. Asse em forno pré-aquecido a 180ºC por cerca de 35 a 40 minutos, ou até que um palito inserido no centro saia limpo."
+  }
+];
+---
+
+<Layout title="Receitas | Ikeda Supermercados">
+  <Navbar />
+
+  <main class="pt-[120px] min-h-screen bg-bg">
+    <section class="py-16 px-6 md:px-12 bg-gradient-to-br from-primary via-blue-600 to-blue-800">
+      <div class="max-w-7xl mx-auto text-center">
+        <span class="text-sm font-bold text-secondary uppercase tracking-[3px] mb-4 block reveal">
+          Receitas
+        </span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 reveal delay-100">
+          Inspirações Culinárias
+        </h1>
+        <p class="text-lg text-blue-100 max-w-2xl mx-auto reveal delay-200">
+          Receitas deliciosas com ingredientes frescos da Ikeda
+        </p>
+      </div>
+    </section>
+
+    <section class="py-16 px-6 md:px-12">
+      <div class="max-w-7xl mx-auto">
+        <div class="space-y-12">
+          {receitas.map((receita, index) => (
+            <div 
+              class="card-highlighted overflow-hidden"
+              style={`animation-delay: ${index * 150}ms`}
+            >
+              <div class="grid grid-cols-1 lg:grid-cols-3 gap-0">
+                <div class="lg:col-span-1 h-64 lg:h-auto overflow-hidden">
+                  <img 
+                    src={receita.imagem} 
+                    alt={receita.nome} 
+                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  />
+                </div>
+                
+                <div class="lg:col-span-2 p-6 md:p-8 lg:p-10">
+                  <h2 class="text-2xl md:text-3xl font-bold text-primary mb-4">
+                    {receita.nome}
+                  </h2>
+                  
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <h3 class="text-sm font-bold text-secondary uppercase tracking-wider mb-3 flex items-center gap-2">
+                        <span class="text-lg">🥘</span> Ingredientes
+                      </h3>
+                      <div class="text-sm text-gray-600 whitespace-pre-line leading-relaxed bg-surface rounded-xl p-4">
+                        {receita.ingredientes}
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <h3 class="text-sm font-bold text-secondary uppercase tracking-wider mb-3 flex items-center gap-2">
+                        <span class="text-lg">👨‍🍳</span> Modo de Preparo
+                      </h3>
+                      <div class="text-sm text-gray-600 leading-relaxed bg-surface rounded-xl p-4">
+                        {receita.modoPreparo}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

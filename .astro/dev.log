@@ -16,3 +16,47 @@
 Failed to load url astro:server-app.js (resolved id: astro:server-app.js). Does the file exist?
 Error: Failed to load url astro:server-app.js (resolved id: astro:server-app.js). Does the file exist?
     at loadAndTransform (file:///C:/Users/Valdo/Desktop/SITES/DEV/Ikeda/ikeda-site/node_modules/vite/dist/node/chunks/node.js:19714:31)
+[2m23:08:37[22m [34m[vite][39m program reload
+[2m23:09:08[22m [34m[vite][39m program reload
+[2m23:10:12[22m [34m[vite][39m program reload
+[2m23:10:12[22m [34m[vite][39m program reload
+[2m23:20:03[22m [34m[watch][39m /src/layouts/Layout.astro?astro&type=style&index=0&lang.css
+[2m23:20:03[22m [34m[watch][39m /src/layouts/Layout.astro?astro&type=style&index=0&lang.css
+[2m23:20:11[22m [34m[vite][39m program reload
+[2m23:20:11[22m [34m[vite][39m program reload
+[2m23:22:09[22m [34m[watch][39m /src/layouts/Layout.astro?astro&type=style&index=0&lang.css
+[2m23:22:16[22m [34m[vite][39m program reload
+[2m23:22:17[22m [34m[vite][39m program reload
+[2m23:32:59[22m [34m[vite][39m program reload
+[2m23:33:00[22m [34m[vite][39m program reload
+[2m23:33:19[22m [34m[watch][39m /src/layouts/Layout.astro?astro&type=style&index=0&lang.css
+[2m23:33:28[22m [34m[watch][39m /src/layouts/Layout.astro?astro&type=style&index=0&lang.css
+[2m23:33:34[22m [34m[watch][39m /src/layouts/Layout.astro?astro&type=style&index=0&lang.css
+[2m23:33:42[22m [34m[watch][39m /src/layouts/Layout.astro?astro&type=style&index=0&lang.css
+[2m23:33:46[22m [34m[watch][39m /src/layouts/Layout.astro?astro&type=style&index=0&lang.css
+[2m23:34:01[22m [34m[watch][39m /src/layouts/Layout.astro?astro&type=style&index=0&lang.css
+[2m23:34:37[22m [34m[watch][39m /src/layouts/Layout.astro?astro&type=style&index=0&lang.css
+[2m23:35:19[22m [34m[watch][39m /src/layouts/Layout.astro?astro&type=style&index=0&lang.css
+[2m23:35:43[22m [34m[watch][39m /src/layouts/Layout.astro?astro&type=style&index=0&lang.css
+[2m23:35:53[22m [34m[watch][39m /src/layouts/Layout.astro?astro&type=style&index=0&lang.css
+[2m23:36:01[22m [34m[vite][39m program reload
+[2m23:36:03[22m [34m[vite][39m program reload
+[2m23:43:00[22m [34m[watch][39m src/pages/index.astro
+[2m23:44:16[22m [34m[watch][39m /src/layouts/Layout.astro?astro&type=style&index=0&lang.css
+[2m23:44:25[22m [34m[vite][39m program reload
+[2m23:44:26[22m [34m[vite][39m program reload
+[2m23:46:26[22m [34m[vite][39m program reload
+[2m23:46:27[22m [34m[vite][39m program reload
+[2m23:46:56[22m [34m[vite][39m program reload
+[2m23:47:03[22m [34m[vite][39m program reload
+[2m23:47:29[22m [34m[vite][39m program reload
+[2m23:48:21[22m [34m[watch][39m /src/layouts/Layout.astro?astro&type=style&index=0&lang.css
+[2m23:48:31[22m [34m[vite][39m program reload
+[2m23:48:31[22m [34m[vite][39m program reload
+[2m23:52:55[22m [34m[watch][39m /src/layouts/Layout.astro?astro&type=style&index=0&lang.css
+[2m23:52:55[22m [34m[watch][39m /src/layouts/Layout.astro?astro&type=style&index=0&lang.css
+[2m23:53:07[22m [34m[vite][39m program reload
+[2m23:53:08[22m [34m[vite][39m program reload
+[2m23:53:47[22m [34m[watch][39m /src/layouts/Layout.astro?astro&type=style&index=0&lang.css
+[2m23:53:52[22m [34m[vite][39m program reload
+[2m23:53:53[22m [34m[vite][39m program reload
