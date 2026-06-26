@@ -2,6 +2,23 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+
+const lojas = [
+  {
+    nome: "Junqueirópolis",
+    endereco: "Rua Rui Barbosa, 481",
+    telefone: "(18) 3841-1326",
+    horarios: ["Seg-Sex: 07:30 - 21:00", "Sáb: 07:30 - 18:00"],
+    mapa: "https://maps.google.com/?q=Rua+Rui+Barbosa+481+Junqueirópolis+SP"
+  },
+  {
+    nome: "Dracena",
+    endereco: "Rua Messias Ferreira da Palma, 266",
+    telefone: "(18) 3822-3272",
+    horarios: ["Seg-Sex: 07:30 - 21:00", "Sáb: 07:30 - 18:00", "Dom: 08:00 - 13:00"],
+    mapa: "https://maps.google.com/?q=Rua+Messias+Ferreira+da+Palma+266+Dracena+SP"
+  }
+];
 ---
 
 <Layout title="Ikeda Supermercados | Da nossa família para a sua">
@@ -28,73 +45,119 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <section class="py-20 px-6 md:px-12 bg-bg">
+    <section class="py-20 px-6 md:px-12 bg-primary">
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16 reveal">
-          <span class="text-xs font-bold text-primary uppercase tracking-[3px] mb-4 block">
+          <span class="text-xs font-bold text-secondary uppercase tracking-[3px] mb-4 block">
+            Nossas Lojas
+          </span>
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            Onde nos encontrar
+          </h2>
+          <p class="text-lg text-blue-100 max-w-3xl mx-auto">
+            Encontre a Ikeda mais perto de você
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {lojas.map((loja, index) => (
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border-2 border-secondary hover:scale-105 transition-transform duration-300" style={`animation-delay: ${index * 200}ms`}>
+              <div class="flex items-center gap-3 mb-6">
+                <span class="text-4xl">🏪</span>
+                <h3 class="text-2xl font-bold text-secondary">{loja.nome}</h3>
+              </div>
+              <div class="space-y-3 mb-6">
+                <div class="flex items-start gap-3">
+                  <span class="text-xl">📍</span>
+                  <span class="text-blue-100">{loja.endereco}</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="text-xl">📞</span>
+                  <span class="text-blue-100">{loja.telefone}</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="text-xl">🕐</span>
+                  <div class="text-blue-100">
+                    {loja.horarios.map(h => <div>{h}</div>)}
+                  </div>
+                </div>
+              </div>
+              <a href={loja.mapa} target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center gap-2 text-sm">
+                🗺️ Como Chegar
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 px-6 md:px-12 bg-blue-800">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16 reveal">
+          <span class="text-xs font-bold text-secondary uppercase tracking-[3px] mb-4 block">
             Bem-vindo
           </span>
-          <h2 class="text-3xl md:text-4xl font-bold text-text mb-4">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
             Diariamente trabalhamos com muito amor e dedicação
           </h2>
-          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p class="text-lg text-blue-100 max-w-3xl mx-auto">
             Para oferecer o que há de melhor da nossa família para a sua família.
           </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <a href="/ofertas" class="card-highlighted p-6 text-center group">
+          <a href="/ofertas" class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border-2 border-secondary hover:scale-105 transition-transform duration-300 group">
             <span class="text-5xl block mb-4 group-hover:scale-110 transition-transform">🏷️</span>
-            <h3 class="text-xl font-bold text-primary mb-2">Ofertas</h3>
-            <p class="text-sm text-gray-600">Confira nossas promoções da semana</p>
+            <h3 class="text-xl font-bold text-secondary mb-2">Ofertas</h3>
+            <p class="text-sm text-blue-100">Confira nossas promoções da semana</p>
           </a>
 
-          <a href="/receitas" class="card-highlighted p-6 text-center group">
+          <a href="/receitas" class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border-2 border-secondary hover:scale-105 transition-transform duration-300 group">
             <span class="text-5xl block mb-4 group-hover:scale-110 transition-transform">🍳</span>
-            <h3 class="text-xl font-bold text-primary mb-2">Receitas</h3>
-            <p class="text-sm text-gray-600">Inspirações culinárias deliciosas</p>
+            <h3 class="text-xl font-bold text-secondary mb-2">Receitas</h3>
+            <p class="text-sm text-blue-100">Inspirações culinárias deliciosas</p>
           </a>
 
-          <a href="/lojas" class="card-highlighted p-6 text-center group">
+          <a href="/lojas" class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border-2 border-secondary hover:scale-105 transition-transform duration-300 group">
             <span class="text-5xl block mb-4 group-hover:scale-110 transition-transform">🏪</span>
-            <h3 class="text-xl font-bold text-primary mb-2">Lojas</h3>
-            <p class="text-sm text-gray-600">Encontre a Ikeda mais perto de você</p>
+            <h3 class="text-xl font-bold text-secondary mb-2">Lojas</h3>
+            <p class="text-sm text-blue-100">Encontre a Ikeda mais perto de você</p>
           </a>
 
-          <a href="https://www.ifood.com.br/delivery/dracena-sp/supermercados-ikeda-centro/521de33b-9449-43be-9c61-97b76c4d78d2" target="_blank" class="card-highlighted p-6 text-center group">
+          <a href="https://www.ifood.com.br/delivery/dracena-sp/supermercados-ikeda-centro/521de33b-9449-43be-9c61-97b76c4d78d2" target="_blank" class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border-2 border-secondary hover:scale-105 transition-transform duration-300 group">
             <span class="text-5xl block mb-4 group-hover:scale-110 transition-transform">🛒</span>
-            <h3 class="text-xl font-bold text-primary mb-2">Loja Online</h3>
-            <p class="text-sm text-gray-600">Faça seu pedido pelo iFood</p>
+            <h3 class="text-xl font-bold text-secondary mb-2">Loja Online</h3>
+            <p class="text-sm text-blue-100">Faça seu pedido pelo iFood</p>
           </a>
         </div>
       </div>
     </section>
 
-    <section class="py-20 px-6 md:px-12 bg-gradient-to-br from-surface to-white">
+    <section class="py-20 px-6 md:px-12 bg-primary">
       <div class="max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div class="reveal-left">
-            <span class="text-xs font-bold text-primary uppercase tracking-[3px] mb-4 block">
+            <span class="text-xs font-bold text-secondary uppercase tracking-[3px] mb-4 block">
               Nossa História
             </span>
-            <h2 class="text-3xl md:text-4xl font-bold text-text mb-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
               85+ Anos de Tradição
             </h2>
-            <p class="text-gray-600 mb-8 leading-relaxed">
+            <p class="text-blue-100 mb-8 leading-relaxed">
               Fundada por Jorge Ikeda, imigrante japonês, a Ikeda Supermercados mantém viva a tradição de oferecer produtos frescos e de qualidade para as famílias da região.
             </p>
             <div class="flex gap-8">
               <div>
-                <span class="text-4xl font-bold text-primary">85+</span>
-                <span class="block text-sm text-gray-500">Anos</span>
+                <span class="text-4xl font-bold text-secondary">85+</span>
+                <span class="block text-sm text-blue-200">Anos</span>
               </div>
               <div>
                 <span class="text-4xl font-bold text-secondary">2</span>
-                <span class="block text-sm text-gray-500">Lojas</span>
+                <span class="block text-sm text-blue-200">Lojas</span>
               </div>
               <div>
-                <span class="text-4xl font-bold text-primary">3</span>
-                <span class="block text-sm text-gray-500">Gerações</span>
+                <span class="text-4xl font-bold text-secondary">3</span>
+                <span class="block text-sm text-blue-200">Gerações</span>
               </div>
             </div>
             <a href="/institucional" class="btn-primary inline-block mt-8">
@@ -102,7 +165,7 @@ import Footer from '../components/Footer.astro';
             </a>
           </div>
           <div class="reveal-right">
-            <div class="card-highlighted overflow-hidden">
+            <div class="rounded-2xl overflow-hidden border-4 border-secondary">
               <img 
                 src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop" 
                 alt="Ikeda Supermercados" 
