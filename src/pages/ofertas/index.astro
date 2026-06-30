@@ -20,8 +20,8 @@ import PageHero from '../../components/PageHero.astro';
           <div class="absolute -inset-1.5 bg-gradient-to-br from-[var(--color-gold)]/30 to-[var(--color-navy)]/15 rounded-2xl blur-sm"></div>
           <div class="relative w-full rounded-2xl overflow-hidden shadow-xl bg-white" style="height: 75vh; min-height: 540px;">
             <iframe
-              src="https://online.fliphtml5.com/ikedajunqueiradracena/kttj/"
-              class="w-full h-full border-none"
+              data-src="https://online.fliphtml5.com/ikedajunqueiradracena/kttj/"
+              class="w-full h-full border-none lazy-iframe"
               allowfullscreen="true"
               seamless="seamless"
               scrolling="no"
@@ -34,3 +34,17 @@ import PageHero from '../../components/PageHero.astro';
   </main>
   <Footer />
 </Layout>
+
+<script is:inline>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const iframe = entry.target;
+        iframe.src = iframe.dataset.src;
+        observer.unobserve(iframe);
+      }
+    });
+  }, { rootMargin: '200px' });
+
+  document.querySelectorAll('.lazy-iframe').forEach(iframe => observer.observe(iframe));
+</script>

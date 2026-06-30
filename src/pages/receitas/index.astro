@@ -8,7 +8,7 @@ const receitas = [
   {
     id: "torta-holandesa-com-nata",
     nome: "Torta Holandesa com Nata",
-    imagem: "https://ikedasupermercados.com.br/uploads/receitas_20241230195126_foto-receita.jpg",
+    imagem: "/images/receitas/torta-holandesa.jpg",
     ingredientes: `Para o Creme:
 - 400g de nata
 - 1 lata de leite condensado
@@ -28,7 +28,7 @@ Para a Cobertura:
   {
     id: "salpicao",
     nome: "Salpicão",
-    imagem: "https://ikedasupermercados.com.br/uploads/receitas_20241209212845_salpicao-de-natal-receita-toda-h.jpg",
+    imagem: "/images/receitas/salpicao.jpg",
     ingredientes: `- 300g de frango cozido e desfiado
 - 100g de presunto cortado em palitos
 - 150g de muçarela cortada em palitos
@@ -46,7 +46,7 @@ Para a Cobertura:
   {
     id: "bolo-de-pessego",
     nome: "Bolo de Pêssego",
-    imagem: "https://ikedasupermercados.com.br/uploads/receitas_20241125201126_bolo-pessego.jpg",
+    imagem: "/images/receitas/bolo-pessego.jpg",
     ingredientes: `- 1 3/4 chávenas de açúcar
 - 4 pêssegos descascados, sem caroço e cortados em 6 partes
 - 250g de manteiga sem sal e derretida
@@ -62,7 +62,7 @@ Para a Cobertura:
   {
     id: "bolo-de-limao-com-yogurte",
     nome: "Bolo de Limão com Yogurte",
-    imagem: "https://ikedasupermercados.com.br/uploads/receitas_20180416152301_limao-com-cobertura.jpg",
+    imagem: "/images/receitas/bolo-limao.jpg",
     ingredientes: `MASSA:
 - 4 ovos
 - 1 xícara (chá) de iogurte natural
@@ -93,7 +93,7 @@ Para a Cobertura:
           <article class="card overflow-hidden reveal" style={`animation-delay: ${index * 100}ms`}>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-0">
               <div class="lg:col-span-1 h-64 lg:h-auto overflow-hidden">
-                <img src={receita.imagem} alt={receita.nome} class="w-full h-full object-cover" />
+                <img src={receita.imagem} alt={receita.nome} class="w-full h-full object-cover" loading="lazy" />
               </div>
 
               <div class="lg:col-span-2 p-7 md:p-10">

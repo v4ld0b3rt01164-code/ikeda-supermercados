@@ -8,25 +8,25 @@ const campanhas = [
   {
     id: "vinho-crevelim",
     nome: "Promoção Vinho Crevelim",
-    imagem: "https://ikedasupermercados.com.br/uploads/20241230175027_ikeda-dracena---promocao-crevelim---banner-site.jpg",
+    imagem: "/images/campanhas/vinho-crevelim.jpg",
     status: "finalizada"
   },
   {
     id: "super-coffee",
     nome: "Promoção Super Coffee",
-    imagem: "https://ikedasupermercados.com.br/uploads/20241126193901_ikeda-dracena-promocao-super-coffe-post.jpg",
+    imagem: "/images/campanhas/super-coffee.jpg",
     status: "finalizada"
   },
   {
     id: "caminhao-de-premios",
     nome: "Promoção Caminhão de Prêmios",
-    imagem: "https://ikedasupermercados.com.br/uploads/20180622154537_banner-site.png",
+    imagem: "/images/campanhas/caminhao-de-premios.png",
     status: "finalizada"
   },
   {
     id: "toda-mae-merece",
     nome: "Toda Mãe Merece Ikeda Supermercados",
-    imagem: "https://ikedasupermercados.com.br/uploads/20180419202635_banner-site.png",
+    imagem: "/images/campanhas/toda-mae-merece.png",
     status: "finalizada"
   }
 ];
@@ -47,7 +47,7 @@ const campanhas = [
           {campanhas.map((campanha, index) => (
             <article class="card overflow-hidden reveal" style={`animation-delay: ${index * 100}ms`}>
               <div class="relative bg-slate-50">
-                <img src={campanha.imagem} alt={campanha.nome} class="w-full h-auto object-contain" />
+                <img src={campanha.imagem} alt={campanha.nome} class="w-full h-auto object-contain" loading="lazy" />
                 <span class="absolute top-4 right-4 px-3 py-1.5 bg-[var(--color-navy)]/85 backdrop-blur text-white text-xs font-semibold rounded-full tracking-wide">
                   Finalizada
                 </span>
