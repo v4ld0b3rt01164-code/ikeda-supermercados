@@ -1,58 +1,104 @@
 ---
 ---
 
-<footer class="py-12 bg-secondary text-text px-6 md:px-12">
-  <div class="max-w-7xl mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-      <div>
-        <img src="/images/logo-3d.png" alt="Ikeda Supermercados" class="h-16 w-auto mb-4" />
-        <p class="text-sm text-gray-800">Da nossa família para a sua desde 1941.</p>
+<footer class="bg-navy-section text-white pt-20 pb-8 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto relative z-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <!-- Marca -->
+      <div class="lg:pr-6">
+        <img src="/images/logo-3d.png" alt="Ikeda Supermercados" class="h-14 w-auto mb-5 brightness-0 invert" />
+        <p class="text-sm text-white/60 leading-relaxed">
+          Da nossa família para a sua desde 1941. Qualidade, tradição e dedicação em cada compra.
+        </p>
       </div>
-      
+
+      <!-- Links rápidos -->
       <div>
-        <h4 class="font-bold text-gray-900 mb-4">Links Rápidos</h4>
-        <ul class="space-y-2 text-sm text-gray-800">
-          <li><a href="/institucional" class="hover:text-white transition-colors">Nossa História</a></li>
-          <li><a href="/lojas" class="hover:text-white transition-colors">Nossas Lojas</a></li>
-          <li><a href="/ofertas" class="hover:text-white transition-colors">Ofertas</a></li>
-          <li><a href="/receitas" class="hover:text-white transition-colors">Receitas</a></li>
+        <h4 class="text-xs font-bold text-[var(--color-gold)] uppercase tracking-[0.2em] mb-5">Navegação</h4>
+        <ul class="space-y-3 text-sm text-white/70">
+          <li><a href="/institucional" class="hover:text-[var(--color-gold)] transition-colors">Nossa História</a></li>
+          <li><a href="/lojas" class="hover:text-[var(--color-gold)] transition-colors">Nossas Lojas</a></li>
+          <li><a href="/ofertas" class="hover:text-[var(--color-gold)] transition-colors">Ofertas</a></li>
+          <li><a href="/receitas" class="hover:text-[var(--color-gold)] transition-colors">Receitas</a></li>
+          <li><a href="/campanhas" class="hover:text-[var(--color-gold)] transition-colors">Campanhas</a></li>
         </ul>
       </div>
-      
+
+      <!-- Serviços -->
       <div>
-        <h4 class="font-bold text-gray-900 mb-4">Serviços</h4>
-        <ul class="space-y-2 text-sm text-gray-800">
-          <li><a href="/cartao-fidelidade" class="hover:text-white transition-colors">Cartão Fidelidade</a></li>
-          <li><a href="/trabalhe-conosco" class="hover:text-white transition-colors">Trabalhe Conosco</a></li>
-          <li><a href="/contato" class="hover:text-white transition-colors">Contato</a></li>
-          <li><a href="https://www.ifood.com.br/delivery/dracena-sp/supermercados-ikeda-centro/521de33b-9449-43be-9c61-97b76c4d78d2" target="_blank" class="hover:text-white transition-colors">Loja Online</a></li>
+        <h4 class="text-xs font-bold text-[var(--color-gold)] uppercase tracking-[0.2em] mb-5">Serviços</h4>
+        <ul class="space-y-3 text-sm text-white/70">
+          <li><a href="/cartao-fidelidade" class="hover:text-[var(--color-gold)] transition-colors">Cartão Fidelidade</a></li>
+          <li><a href="/trabalhe-conosco" class="hover:text-[var(--color-gold)] transition-colors">Trabalhe Conosco</a></li>
+          <li><a href="/contato" class="hover:text-[var(--color-gold)] transition-colors">Contato</a></li>
+          <li>
+            <a href="https://www.ifood.com.br/delivery/dracena-sp/supermercados-ikeda-centro/521de33b-9449-43be-9c61-97b76c4d78d2" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--color-gold)] transition-colors inline-flex items-center gap-2">
+              Loja Online
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+          </li>
         </ul>
       </div>
-      
+
+      <!-- Contato -->
       <div>
-        <h4 class="font-bold text-gray-900 mb-4">Contato</h4>
-        <ul class="space-y-2 text-sm text-gray-800">
-          <li>📍 Junqueirópolis: (18) 3841-1326</li>
-          <li>📍 Dracena: (18) 3822-3272</li>
-          <li>📱 WhatsApp: (18) 99737-4186</li>
+        <h4 class="text-xs font-bold text-[var(--color-gold)] uppercase tracking-[0.2em] mb-5">Contato</h4>
+        <ul class="space-y-3 text-sm text-white/70">
+          <li class="flex items-start gap-2">
+            <svg class="w-4 h-4 mt-0.5 text-[var(--color-gold)] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="2.5" stroke-width="1.8"/></svg>
+            <span><strong class="text-white/90">Junqueirópolis</strong><br/>(18) 3841-1326</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <svg class="w-4 h-4 mt-0.5 text-[var(--color-gold)] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="2.5" stroke-width="1.8"/></svg>
+            <span><strong class="text-white/90">Dracena</strong><br/>(18) 3822-3272</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <svg class="w-4 h-4 mt-0.5 text-[var(--color-gold)] flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span><strong class="text-white/90">WhatsApp</strong><br/>(18) 99737-4186</span>
+          </li>
         </ul>
       </div>
     </div>
 
-    <div class="border-t border-yellow-600 pt-8 text-center">
-      <p class="text-sm text-gray-800">
+    <div class="border-t border-white/10 pt-7 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-white/50">
         © 2026 Ikeda Supermercados. Todos os direitos reservados.
       </p>
+      <div class="flex items-center gap-5">
+        <a href="https://facebook.com/ikedaDracena" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-white/50 hover:text-[var(--color-gold)] transition-colors">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/ikedajunqueiradracena" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-white/50 hover:text-[var(--color-gold)] transition-colors">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://wa.me/5518997374186" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="text-white/50 hover:text-[var(--color-gold)] transition-colors">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+      </div>
+
+      <!-- Agência Stillus -->
+      <a
+        href="https://instagram.com/stilluspropaganda"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-2 group"
+        aria-label="Marketing por Stillus Propaganda"
+        title="Marketing por Stillus Propaganda"
+      >
+        <span class="text-[10px] text-white/40 group-hover:text-white/60 transition-colors">Marketing por</span>
+        <img src="/images/Logo-Stillus-Preto.png" alt="Stillus Propaganda" class="h-7 w-auto opacity-60 group-hover:opacity-100 brightness-0 invert transition-opacity duration-300" />
+      </a>
     </div>
   </div>
 </footer>
 
-<a 
+<!-- Botão flutuante WhatsApp -->
+<a
   href="https://wa.me/5518997374186"
   target="_blank"
   rel="noopener noreferrer"
-  class="fixed bottom-6 right-6 z-50 w-16 h-16 bg-whatsapp text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300"
+  class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[var(--color-whatsapp)] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300"
   aria-label="WhatsApp"
 >
-  <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>

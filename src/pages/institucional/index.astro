@@ -2,58 +2,98 @@
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
+import PageHero from '../../components/PageHero.astro';
 ---
 
 <Layout title="Nossa História | Ikeda Supermercados">
   <Navbar />
-  <main class="pt-[120px] min-h-screen bg-bg">
-    <section class="py-16 px-6 md:px-12 bg-gradient-to-br from-primary via-blue-600 to-blue-800">
-      <div class="max-w-7xl mx-auto text-center">
-        <span class="text-sm font-bold text-secondary uppercase tracking-[3px] mb-4 block reveal">Nossa História</span>
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 reveal delay-100">Sobre Nós</h1>
-        <p class="text-lg text-blue-100 max-w-2xl mx-auto reveal delay-200">Mais de 85 anos de tradição e qualidade</p>
-      </div>
-    </section>
-    <section class="py-16 px-6 md:px-12">
-      <div class="max-w-4xl mx-auto">
-        <div class="card-highlighted p-8 md:p-12 mb-12 reveal">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-            <div class="rounded-xl overflow-hidden h-48">
-              <img src="https://ikedasupermercados.com.br/uploads/institucional_20180419120822_casaprogresso.jpg" alt="Casa Progresso" class="w-full h-full object-cover" />
-            </div>
-            <div class="rounded-xl overflow-hidden h-48">
-              <img src="https://ikedasupermercados.com.br/uploads/institucional_20180419120532_atacado-aereo.jpg" alt="Atacado Aéreo" class="w-full h-full object-cover" />
-            </div>
-            <div class="rounded-xl overflow-hidden h-48">
-              <img src="https://ikedasupermercados.com.br/uploads/institucional_20180419120532_emporio.jpg" alt="Empório" class="w-full h-full object-cover" />
-            </div>
+  <main class="min-h-screen">
+    <PageHero
+      eyebrow="Nossa História"
+      title="Sobre Nós"
+      subtitle="Mais de 85 anos de tradição e qualidade"
+    />
+
+    <section class="py-20 md:py-24 px-6 md:px-12 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <!-- Galeria -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-14 reveal">
+          <div class="rounded-2xl overflow-hidden h-52 shadow-md">
+            <img src="https://ikedasupermercados.com.br/uploads/institucional_20180419120822_casaprogresso.jpg" alt="Casa Progresso" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
           </div>
-          <div class="text-gray-600 leading-relaxed space-y-4">
-            <p>Em 1929, um emigrante japonês chamado Jorge Ikeda, na época com apenas 17 anos de idade, começou sua experiência profissional em terras brasileiras no ramo da agricultura. Após 6 anos se casou com a jovem Tama, com quem teve seus nove filhos.</p>
-            <p>Foi no dia 19 de outubro de 1941, que nascia o então Sr. Paulo Ikeda, na cidade de Borá, interior do estado de São Paulo.</p>
-            <p>Quando Paulo completou 6 anos de idade o Sr. Jorge, junto com sua família se mudou para Junqueirópolis/SP, onde iniciou suas atividades no ramo comercial, abrindo o pequeno empório de secos e molhados, que no ano de 1947 foi nomeado de <strong>Casa Progresso</strong>. Uma empresa precursora da cidade de Junqueirópolis, que atendia principalmente a população da zona rural e da pequena cidade que se formava.</p>
-            <p>No fim da década de 50, especificamente em 1959, formou-se a empresa Jorge Sakuiti Ikeda e Cia. Ltda - Casa Progresso, tendo seus filhos como sócios. Alguns anos depois, em 1965, inaugurou o primeiro Supermercado e mudou a Razão Social para <strong>Comercial Ikeda Ltda.</strong> (Atual Loja 01 de Junqueirópolis, Rua Rui Barbosa, 481).</p>
-            <p>Com a expansão dos seus negócios, em 1972 o Sr. Jorge passou a atender também no ramo atacadista e outras lojas de varejo (filiais) foram abertas com seus sócios, na mesma época.</p>
-            <p>Grandes mudanças aconteceram em 1981 e 2002. A empresa passou por cisões dos sócios – irmãos e 10 anos depois (2012), com nova configuração societária, inaugura uma nova loja na cidade de <strong>Dracena</strong>, também localizada no interior do estado de São Paulo.</p>
-            <p class="text-lg font-semibold text-primary italic">"Diariamente trabalhamos com muito amor e dedicação, para oferecer o que há de melhor da nossa família para a sua família."</p>
+          <div class="rounded-2xl overflow-hidden h-52 shadow-md">
+            <img src="https://ikedasupermercados.com.br/uploads/institucional_20180419120532_atacado-aereo.jpg" alt="Atacado Aéreo" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+          </div>
+          <div class="rounded-2xl overflow-hidden h-52 shadow-md">
+            <img src="https://ikedasupermercados.com.br/uploads/institucional_20180419120532_emporio.jpg" alt="Empório" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
           </div>
         </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div class="card-highlighted p-6 text-center reveal-bounce delay-100">
-            <span class="text-3xl font-bold text-primary block">1929</span>
-            <span class="text-sm text-gray-500">Início</span>
+
+        <!-- Texto -->
+        <div class="card p-8 md:p-12 mb-16 reveal">
+          <div class="text-[var(--color-muted)] leading-relaxed space-y-5 text-base md:text-lg">
+            <p>Em 1929, um emigrante japonês chamado Jorge Ikeda, na época com apenas 17 anos de idade, começou sua experiência profissional em terras brasileiras no ramo da agricultura. Após 6 anos se casou com a jovem Tama, com quem teve seus nove filhos.</p>
+            <p>Foi no dia 19 de outubro de 1941, que nascia o então Sr. Paulo Ikeda, na cidade de Borá, interior do estado de São Paulo.</p>
+            <p>Quando Paulo completou 6 anos de idade o Sr. Jorge, junto com sua família se mudou para Junqueirópolis/SP, onde iniciou suas atividades no ramo comercial, abrindo o pequeno empório de secos e molhados, que no ano de 1947 foi nomeado de <strong class="text-[var(--color-navy)]">Casa Progresso</strong>. Uma empresa precursora da cidade de Junqueirópolis, que atendia principalmente a população da zona rural e da pequena cidade que se formava.</p>
+            <p>No fim da década de 50, especificamente em 1959, formou-se a empresa Jorge Sakuiti Ikeda e Cia. Ltda - Casa Progresso, tendo seus filhos como sócios. Alguns anos depois, em 1965, inaugurou o primeiro Supermercado e mudou a Razão Social para <strong class="text-[var(--color-navy)]">Comercial Ikeda Ltda.</strong> (Atual Loja 01 de Junqueirópolis, Rua Rui Barbosa, 481).</p>
+            <p>Com a expansão dos seus negócios, em 1972 o Sr. Jorge passou a atender também no ramo atacadista e outras lojas de varejo (filiais) foram abertas com seus sócios, na mesma época.</p>
+            <p>Grandes mudanças aconteceram em 1981 e 2002. A empresa passou por cisões dos sócios – irmãos e 10 anos depois (2012), com nova configuração societária, inaugura uma nova loja na cidade de <strong class="text-[var(--color-navy)]">Dracena</strong>, também localizada no interior do estado de São Paulo.</p>
           </div>
-          <div class="card-highlighted p-6 text-center reveal-bounce delay-200">
-            <span class="text-3xl font-bold text-secondary block">1941</span>
-            <span class="text-sm text-gray-500">Fundação</span>
-          </div>
-          <div class="card-highlighted p-6 text-center reveal-bounce delay-300">
-            <span class="text-3xl font-bold text-primary block">1965</span>
-            <span class="text-sm text-gray-500">1º Supermercado</span>
-          </div>
-          <div class="card-highlighted p-6 text-center reveal-bounce delay-400">
-            <span class="text-3xl font-bold text-secondary block">2012</span>
-            <span class="text-sm text-gray-500">Loja Dracena</span>
+
+          <blockquote class="mt-10 pl-6 border-l-2 border-[var(--color-gold)]">
+            <p class="text-lg md:text-xl font-medium text-[var(--color-navy)] italic leading-relaxed">
+              "Diariamente trabalhamos com muito amor e dedicação, para oferecer o que há de melhor da nossa família para a sua família."
+            </p>
+          </blockquote>
+        </div>
+
+        <!-- Timeline -->
+        <div class="mb-6 text-center reveal">
+          <span class="eyebrow">Linha do Tempo</span>
+          <h2 class="heading-display text-3xl md:text-4xl text-[var(--color-navy)] mt-3">
+            Marcos da nossa história
+          </h2>
+          <div class="divider-gold mx-auto mt-5"></div>
+        </div>
+
+        <div class="relative">
+          <div class="absolute left-1/2 top-0 bottom-0 w-px bg-slate-200 -translate-x-1/2 hidden md:block"></div>
+          <div class="space-y-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center reveal-left">
+              <div class="text-center md:text-right md:pr-12">
+                <span class="block text-4xl md:text-5xl font-extrabold text-[var(--color-navy)]">1929</span>
+                <span class="text-sm text-[var(--color-muted)] uppercase tracking-wider">O Início</span>
+              </div>
+              <div class="hidden md:block"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center reveal-right">
+              <div class="hidden md:block"></div>
+              <div class="md:pl-12">
+                <span class="block text-4xl md:text-5xl font-extrabold text-[var(--color-gold)]">1941</span>
+                <span class="text-sm text-[var(--color-muted)] uppercase tracking-wider">Nasce Paulo Ikeda</span>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center reveal-left">
+              <div class="text-center md:text-right md:pr-12">
+                <span class="block text-4xl md:text-5xl font-extrabold text-[var(--color-navy)]">1947</span>
+                <span class="text-sm text-[var(--color-muted)] uppercase tracking-wider">Casa Progresso</span>
+              </div>
+              <div class="hidden md:block"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center reveal-right">
+              <div class="hidden md:block"></div>
+              <div class="md:pl-12">
+                <span class="block text-4xl md:text-5xl font-extrabold text-[var(--color-gold)]">1965</span>
+                <span class="text-sm text-[var(--color-muted)] uppercase tracking-wider">1º Supermercado</span>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center reveal-left">
+              <div class="text-center md:text-right md:pr-12">
+                <span class="block text-4xl md:text-5xl font-extrabold text-[var(--color-navy)]">2012</span>
+                <span class="text-sm text-[var(--color-muted)] uppercase tracking-wider">Loja de Dracena</span>
+              </div>
+              <div class="hidden md:block"></div>
+            </div>
           </div>
         </div>
       </div>

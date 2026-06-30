@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
+import PageHero from '../../components/PageHero.astro';
 
 const campanhas = [
   {
@@ -33,33 +34,29 @@ const campanhas = [
 
 <Layout title="Campanhas | Ikeda Supermercados">
   <Navbar />
-  <main class="pt-[120px] min-h-screen bg-bg">
-    <section class="py-16 px-6 md:px-12 bg-gradient-to-br from-primary via-blue-600 to-blue-800">
-      <div class="max-w-7xl mx-auto text-center">
-        <span class="text-sm font-bold text-secondary uppercase tracking-[3px] mb-4 block reveal">Campanhas</span>
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 reveal delay-100">Nossas Campanhas</h1>
-        <p class="text-lg text-blue-100 max-w-2xl mx-auto reveal delay-200">Confira nossas campanhas e promoções especiais</p>
-      </div>
-    </section>
-    <section class="py-16 px-6 md:px-12">
+  <main class="min-h-screen">
+    <PageHero
+      eyebrow="Campanhas"
+      title="Nossas Campanhas"
+      subtitle="Confira nossas campanhas e promoções especiais"
+    />
+
+    <section class="py-20 md:py-24 px-6 md:px-12 bg-cream">
       <div class="max-w-7xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           {campanhas.map((campanha, index) => (
-            <div class="card-highlighted overflow-hidden" style={`animation-delay: ${index * 150}ms`}>
-              <div class="relative bg-gray-100">
-                <img 
-                  src={campanha.imagem} 
-                  alt={campanha.nome} 
-                  class="w-full h-auto object-contain transition-transform duration-500 hover:scale-105"
-                />
-                <div class="absolute top-4 right-4 px-4 py-2 bg-red-500 text-white text-xs font-bold rounded-full shadow-lg">
-                  Campanha Finalizada
-                </div>
+            <article class="card overflow-hidden reveal" style={`animation-delay: ${index * 100}ms`}>
+              <div class="relative bg-slate-50">
+                <img src={campanha.imagem} alt={campanha.nome} class="w-full h-auto object-contain" />
+                <span class="absolute top-4 right-4 px-3 py-1.5 bg-[var(--color-navy)]/85 backdrop-blur text-white text-xs font-semibold rounded-full tracking-wide">
+                  Finalizada
+                </span>
               </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-text">{campanha.nome}</h3>
+              <div class="p-6 border-t border-slate-100">
+                <span class="eyebrow text-[10px]">Campanha</span>
+                <h3 class="text-lg font-bold text-[var(--color-navy)] mt-1.5">{campanha.nome}</h3>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>

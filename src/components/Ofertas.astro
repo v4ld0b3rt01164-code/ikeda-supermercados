@@ -1,29 +1,35 @@
 ---
+interface Props {
+  variant?: 'light' | 'cream';
+}
+const { variant = 'light' } = Astro.props;
 ---
 
-<section id="ofertas" class="py-24 w-full bg-bg px-6 md:px-12">
+<section id="ofertas" class:list={["py-20 md:py-28 w-full px-6 md:px-12", variant === 'cream' ? 'bg-cream' : 'bg-white']}>
   <div class="max-w-7xl mx-auto">
-    <div class="mb-12 text-center reveal">
-      <span class="text-xs font-bold text-primary uppercase tracking-[3px] mb-4 block">
-        Ofertas da Semana
-      </span>
-      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-text mb-4">
+    <div class="mb-12 text-center reveal max-w-2xl mx-auto">
+      <span class="eyebrow mb-4">Ofertas da Semana</span>
+      <h2 class="heading-display text-3xl md:text-4xl lg:text-5xl text-[var(--color-navy)] mt-3">
         Confira nossas promoções
       </h2>
-      <p class="text-base md:text-lg text-gray-600">
-        Arraste para o lado e confira o folheto completo!
+      <div class="divider-gold mx-auto mt-5"></div>
+      <p class="text-base md:text-lg text-[var(--color-muted)] mt-5">
+        Arraste para o lado e confira o folheto completo
       </p>
     </div>
 
-    <div class="w-full rounded-2xl overflow-hidden card-highlighted reveal-scale" style="height: 70vh; min-height: 500px;">
-      <iframe 
-        src="https://online.fliphtml5.com/ikedajunqueiradracena/kttj/" 
-        class="w-full h-full border-none"
-        allowfullscreen="true"
-        seamless="seamless"
-        scrolling="no"
-        title="Folheto de Ofertas Ikeda"
-      ></iframe>
+    <div class="relative reveal-scale">
+      <div class="absolute -inset-1.5 bg-gradient-to-br from-[var(--color-gold)]/30 to-[var(--color-navy)]/15 rounded-2xl blur-sm"></div>
+      <div class="relative w-full rounded-2xl overflow-hidden shadow-xl bg-white" style="height: 75vh; min-height: 540px;">
+        <iframe
+          src="https://online.fliphtml5.com/ikedajunqueiradracena/kttj/"
+          class="w-full h-full border-none"
+          allowfullscreen="true"
+          seamless="seamless"
+          scrolling="no"
+          title="Folheto de Ofertas Ikeda"
+        ></iframe>
+      </div>
     </div>
   </div>
 </section>

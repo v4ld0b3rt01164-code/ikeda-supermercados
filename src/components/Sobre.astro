@@ -1,44 +1,51 @@
 ---
 ---
 
-<section id="sobre" class="py-24 w-full bg-bg px-6 md:px-12">
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 w-full max-w-7xl mx-auto">
-    <div class="flex flex-col justify-center reveal-left">
-      <span class="text-xs font-bold text-primary uppercase tracking-[3px] mb-4">
-        Nossa História
-      </span>
-      
-      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-text leading-tight mb-6">
+<section id="sobre" class="py-20 md:py-28 w-full bg-cream px-6 md:px-12">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20 w-full max-w-7xl mx-auto items-center">
+    <!-- Texto -->
+    <div class="flex flex-col justify-center reveal-left order-2 lg:order-1">
+      <span class="eyebrow mb-4">Nossa História</span>
+      <h2 class="heading-display text-3xl md:text-4xl lg:text-5xl text-[var(--color-navy)] mb-6 text-balance">
         Da nossa família<br />para a sua
       </h2>
-      
-      <p class="text-base md:text-lg text-gray-600 leading-relaxed mb-8 max-w-lg">
+      <div class="divider-gold mb-6"></div>
+      <p class="text-base md:text-lg text-[var(--color-muted)] leading-relaxed mb-8 max-w-lg">
         Fundada por Jorge Ikeda, imigrante japonês, a Ikeda Supermercados mantém viva a tradição de oferecer produtos frescos e de qualidade. Com mais de 85 anos de história, somos parte da vida das famílias da região.
       </p>
-      
-      <div class="flex flex-wrap gap-8 md:gap-12">
-        <div class="reveal-bounce delay-100">
-          <span class="block text-4xl md:text-5xl font-bold text-primary">85+</span>
-          <span class="text-sm text-gray-500 font-medium">Anos</span>
+
+      <div class="flex flex-wrap gap-10 md:gap-14 mb-9">
+        <div>
+          <span class="block text-4xl md:text-5xl font-extrabold text-[var(--color-navy)] tracking-tight">85<span class="text-[var(--color-gold)]">+</span></span>
+          <span class="text-sm text-[var(--color-muted)] font-medium uppercase tracking-wider">Anos</span>
         </div>
-        <div class="reveal-bounce delay-200">
-          <span class="block text-4xl md:text-5xl font-bold text-secondary">2</span>
-          <span class="text-sm text-gray-500 font-medium">Lojas</span>
+        <div>
+          <span class="block text-4xl md:text-5xl font-extrabold text-[var(--color-navy)] tracking-tight">2</span>
+          <span class="text-sm text-[var(--color-muted)] font-medium uppercase tracking-wider">Lojas</span>
         </div>
-        <div class="reveal-bounce delay-300">
-          <span class="block text-4xl md:text-5xl font-bold text-primary">3</span>
-          <span class="text-sm text-gray-500 font-medium">Gerações</span>
+        <div>
+          <span class="block text-4xl md:text-5xl font-extrabold text-[var(--color-navy)] tracking-tight">3</span>
+          <span class="text-sm text-[var(--color-muted)] font-medium uppercase tracking-wider">Gerações</span>
         </div>
       </div>
+
+      <a href="/institucional" class="btn-primary self-start">
+        Conheça Nossa História
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>
     </div>
-    
-    <div class="flex items-center justify-center reveal-right">
-      <div class="w-full aspect-square lg:aspect-[4/5] card-highlighted overflow-hidden">
-        <img 
-          src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=1000&fit=crop" 
-          alt="História Ikeda" 
-          class="w-full h-full object-cover"
-        />
+
+    <!-- Imagem com moldura dourada -->
+    <div class="flex items-center justify-center reveal-right order-1 lg:order-2">
+      <div class="relative w-full max-w-md">
+        <div class="absolute -inset-3 border border-[var(--color-gold)]/40 rounded-2xl"></div>
+        <div class="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
+          <img
+            src="/images/ikeda.jpg"
+            alt="Ikeda Supermercados"
+            class="w-full h-full object-cover"
+          />
+        </div>
       </div>
     </div>
   </div>

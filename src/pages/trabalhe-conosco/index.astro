@@ -2,46 +2,47 @@
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
+import PageHero from '../../components/PageHero.astro';
 ---
 
 <Layout title="Trabalhe Conosco | Ikeda Supermercados">
   <Navbar />
-  <main class="pt-[120px] min-h-screen bg-bg">
-    <section class="py-16 px-6 md:px-12 bg-gradient-to-br from-secondary via-yellow-400 to-yellow-500">
-      <div class="max-w-7xl mx-auto text-center">
-        <span class="text-sm font-bold text-primary uppercase tracking-[3px] mb-4 block reveal">Trabalhe Conosco</span>
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-text mb-4 reveal delay-100">Envie seu currículo</h1>
-        <p class="text-lg text-gray-700 max-w-2xl mx-auto reveal delay-200">Faça parte da nossa equipe</p>
-      </div>
-    </section>
-    <section class="py-16 px-6 md:px-12">
+  <main class="min-h-screen">
+    <PageHero
+      eyebrow="Trabalhe Conosco"
+      title="Envie seu currículo"
+      subtitle="Faça parte da nossa equipe"
+    />
+
+    <section class="py-20 md:py-24 px-6 md:px-12 bg-cream">
       <div class="max-w-4xl mx-auto">
-        <div class="card-highlighted p-8 md:p-12 reveal">
-          <form class="space-y-8">
+        <div class="card p-8 md:p-12 reveal">
+          <form class="space-y-10">
+            <!-- Dados Pessoais -->
             <div>
-              <h3 class="text-xl font-bold text-primary mb-4 flex items-center gap-2">
-                <span class="text-2xl">👤</span> Dados Pessoais
-              </h3>
+              <span class="eyebrow">Dados Pessoais</span>
+              <h3 class="heading-display text-xl md:text-2xl text-[var(--color-navy)] mt-2 mb-6">Informações pessoais</h3>
+              <div class="divider-gold mb-6"></div>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
-                  <label class="block text-sm font-semibold text-text mb-2">CPF *</label>
-                  <input type="text" class="w-full px-4 py-3 bg-surface border-2 border-secondary rounded-xl text-text focus:outline-none focus:border-primary transition-colors" placeholder="000.000.000-00" required />
+                  <label class="field-label">CPF *</label>
+                  <input type="text" class="field-input" placeholder="000.000.000-00" required />
                 </div>
                 <div>
-                  <label class="block text-sm font-semibold text-text mb-2">RG *</label>
-                  <input type="text" class="w-full px-4 py-3 bg-surface border-2 border-secondary rounded-xl text-text focus:outline-none focus:border-primary transition-colors" placeholder="RG" required />
+                  <label class="field-label">RG *</label>
+                  <input type="text" class="field-input" placeholder="RG" required />
                 </div>
                 <div>
-                  <label class="block text-sm font-semibold text-text mb-2">Nome Completo *</label>
-                  <input type="text" class="w-full px-4 py-3 bg-surface border-2 border-secondary rounded-xl text-text focus:outline-none focus:border-primary transition-colors" placeholder="Nome Completo" required />
+                  <label class="field-label">Nome Completo *</label>
+                  <input type="text" class="field-input" placeholder="Nome Completo" required />
                 </div>
                 <div>
-                  <label class="block text-sm font-semibold text-text mb-2">Data de Nascimento *</label>
-                  <input type="text" class="w-full px-4 py-3 bg-surface border-2 border-secondary rounded-xl text-text focus:outline-none focus:border-primary transition-colors" placeholder="00/00/0000" required />
+                  <label class="field-label">Data de Nascimento *</label>
+                  <input type="text" class="field-input" placeholder="00/00/0000" required />
                 </div>
                 <div>
-                  <label class="block text-sm font-semibold text-text mb-2">Escolaridade *</label>
-                  <select class="w-full px-4 py-3 bg-surface border-2 border-secondary rounded-xl text-text focus:outline-none focus:border-primary transition-colors" required>
+                  <label class="field-label">Escolaridade *</label>
+                  <select class="field-select" required>
                     <option value="">Escolaridade</option>
                     <option value="nao-alfabetizado">Não Alfabetizado</option>
                     <option value="fundamental">1º Grau Completo (Fundamental)</option>
@@ -53,15 +54,15 @@ import Footer from '../../components/Footer.astro';
                   </select>
                 </div>
                 <div>
-                  <label class="block text-sm font-semibold text-text mb-2">Portador de Deficiência *</label>
-                  <select class="w-full px-4 py-3 bg-surface border-2 border-secondary rounded-xl text-text focus:outline-none focus:border-primary transition-colors" required>
+                  <label class="field-label">Portador de Deficiência *</label>
+                  <select class="field-select" required>
                     <option value="nao">Não Possuo Deficiência</option>
                     <option value="sim">Possuo algum tipo de deficiência</option>
                   </select>
                 </div>
                 <div>
-                  <label class="block text-sm font-semibold text-text mb-2">Estado Civil *</label>
-                  <select class="w-full px-4 py-3 bg-surface border-2 border-secondary rounded-xl text-text focus:outline-none focus:border-primary transition-colors" required>
+                  <label class="field-label">Estado Civil *</label>
+                  <select class="field-select" required>
                     <option value="">Estado Civil</option>
                     <option value="Solteiro(a)">Solteiro(a)</option>
                     <option value="Casado(a)">Casado(a)</option>
@@ -69,8 +70,8 @@ import Footer from '../../components/Footer.astro';
                   </select>
                 </div>
                 <div>
-                  <label class="block text-sm font-semibold text-text mb-2">Disponibilidade de Horário *</label>
-                  <select class="w-full px-4 py-3 bg-surface border-2 border-secondary rounded-xl text-text focus:outline-none focus:border-primary transition-colors" required>
+                  <label class="field-label">Disponibilidade de Horário *</label>
+                  <select class="field-select" required>
                     <option value="">Qual sua disponibilidade?</option>
                     <option value="Os dois turnos">Os dois turnos</option>
                     <option value="Manhã/Tarde">Manhã/Tarde</option>
@@ -80,70 +81,72 @@ import Footer from '../../components/Footer.astro';
               </div>
             </div>
 
+            <!-- Endereço -->
             <div>
-              <h3 class="text-xl font-bold text-primary mb-4 flex items-center gap-2">
-                <span class="text-2xl">📍</span> Endereço
-              </h3>
+              <span class="eyebrow">Endereço</span>
+              <h3 class="heading-display text-xl md:text-2xl text-[var(--color-navy)] mt-2 mb-6">Onde você mora</h3>
+              <div class="divider-gold mb-6"></div>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
-                  <label class="block text-sm font-semibold text-text mb-2">CEP *</label>
-                  <input type="text" class="w-full px-4 py-3 bg-surface border-2 border-secondary rounded-xl text-text focus:outline-none focus:border-primary transition-colors" placeholder="00000-000" required />
+                  <label class="field-label">CEP *</label>
+                  <input type="text" class="field-input" placeholder="00000-000" required />
                 </div>
                 <div>
-                  <label class="block text-sm font-semibold text-text mb-2">Estado *</label>
-                  <select class="w-full px-4 py-3 bg-surface border-2 border-secondary rounded-xl text-text focus:outline-none focus:border-primary transition-colors" required>
+                  <label class="field-label">Estado *</label>
+                  <select class="field-select" required>
                     <option value="">Selecione seu Estado</option>
                     <option value="SP">São Paulo</option>
                     <option value="MS">Mato Grosso do Sul</option>
                   </select>
                 </div>
                 <div>
-                  <label class="block text-sm font-semibold text-text mb-2">Cidade *</label>
-                  <input type="text" class="w-full px-4 py-3 bg-surface border-2 border-secondary rounded-xl text-text focus:outline-none focus:border-primary transition-colors" placeholder="Cidade" required />
+                  <label class="field-label">Cidade *</label>
+                  <input type="text" class="field-input" placeholder="Cidade" required />
                 </div>
                 <div>
-                  <label class="block text-sm font-semibold text-text mb-2">Bairro *</label>
-                  <input type="text" class="w-full px-4 py-3 bg-surface border-2 border-secondary rounded-xl text-text focus:outline-none focus:border-primary transition-colors" placeholder="Bairro" required />
+                  <label class="field-label">Bairro *</label>
+                  <input type="text" class="field-input" placeholder="Bairro" required />
                 </div>
                 <div>
-                  <label class="block text-sm font-semibold text-text mb-2">Endereço *</label>
-                  <input type="text" class="w-full px-4 py-3 bg-surface border-2 border-secondary rounded-xl text-text focus:outline-none focus:border-primary transition-colors" placeholder="Endereço" required />
+                  <label class="field-label">Endereço *</label>
+                  <input type="text" class="field-input" placeholder="Endereço" required />
                 </div>
                 <div>
-                  <label class="block text-sm font-semibold text-text mb-2">Número *</label>
-                  <input type="text" class="w-full px-4 py-3 bg-surface border-2 border-secondary rounded-xl text-text focus:outline-none focus:border-primary transition-colors" placeholder="Nº" required />
+                  <label class="field-label">Número *</label>
+                  <input type="text" class="field-input" placeholder="Nº" required />
                 </div>
                 <div>
-                  <label class="block text-sm font-semibold text-text mb-2">Complemento</label>
-                  <input type="text" class="w-full px-4 py-3 bg-surface border-2 border-secondary rounded-xl text-text focus:outline-none focus:border-primary transition-colors" placeholder="Complemento" />
+                  <label class="field-label">Complemento</label>
+                  <input type="text" class="field-input" placeholder="Complemento" />
                 </div>
                 <div>
-                  <label class="block text-sm font-semibold text-text mb-2">Telefone *</label>
-                  <input type="tel" class="w-full px-4 py-3 bg-surface border-2 border-secondary rounded-xl text-text focus:outline-none focus:border-primary transition-colors" placeholder="(00) 0000-0000" required />
+                  <label class="field-label">Telefone *</label>
+                  <input type="tel" class="field-input" placeholder="(00) 0000-0000" required />
                 </div>
                 <div>
-                  <label class="block text-sm font-semibold text-text mb-2">E-mail *</label>
-                  <input type="email" class="w-full px-4 py-3 bg-surface border-2 border-secondary rounded-xl text-text focus:outline-none focus:border-primary transition-colors" placeholder="seu@email.com" required />
+                  <label class="field-label">E-mail *</label>
+                  <input type="email" class="field-input" placeholder="seu@email.com" required />
                 </div>
                 <div>
-                  <label class="block text-sm font-semibold text-text mb-2">Cidade Natal *</label>
-                  <input type="text" class="w-full px-4 py-3 bg-surface border-2 border-secondary rounded-xl text-text focus:outline-none focus:border-primary transition-colors" placeholder="Cidade Natal" required />
+                  <label class="field-label">Cidade Natal *</label>
+                  <input type="text" class="field-input" placeholder="Cidade Natal" required />
                 </div>
               </div>
             </div>
 
+            <!-- Informações Profissionais -->
             <div>
-              <h3 class="text-xl font-bold text-primary mb-4 flex items-center gap-2">
-                <span class="text-2xl">💼</span> Informações Profissionais
-              </h3>
+              <span class="eyebrow">Informações Profissionais</span>
+              <h3 class="heading-display text-xl md:text-2xl text-[var(--color-navy)] mt-2 mb-6">Cargo desejado</h3>
+              <div class="divider-gold mb-6"></div>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
-                  <label class="block text-sm font-semibold text-text mb-2">Cargo de Interesse *</label>
-                  <input type="text" class="w-full px-4 py-3 bg-surface border-2 border-secondary rounded-xl text-text focus:outline-none focus:border-primary transition-colors" placeholder="Cargo que está se candidatando" required />
+                  <label class="field-label">Cargo de Interesse *</label>
+                  <input type="text" class="field-input" placeholder="Cargo que está se candidatando" required />
                 </div>
                 <div>
-                  <label class="block text-sm font-semibold text-text mb-2">Loja *</label>
-                  <select class="w-full px-4 py-3 bg-surface border-2 border-secondary rounded-xl text-text focus:outline-none focus:border-primary transition-colors" required>
+                  <label class="field-label">Loja *</label>
+                  <select class="field-select" required>
                     <option value="">Selecione a Loja</option>
                     <option value="junqueiropolis">Junqueirópolis/SP - Centro - Loja 01</option>
                     <option value="dracena">Dracena/SP - Centro - Loja de Dracena</option>
@@ -152,16 +155,18 @@ import Footer from '../../components/Footer.astro';
               </div>
             </div>
 
+            <!-- Fale sobre você -->
             <div>
-              <h3 class="text-xl font-bold text-primary mb-4 flex items-center gap-2">
-                <span class="text-2xl">📝</span> Fale Sobre Você
-              </h3>
+              <span class="eyebrow">Fale Sobre Você</span>
+              <h3 class="heading-display text-xl md:text-2xl text-[var(--color-navy)] mt-2 mb-6">Conte sua história</h3>
+              <div class="divider-gold mb-6"></div>
               <div>
-                <textarea class="w-full px-4 py-3 bg-surface border-2 border-secondary rounded-xl text-text focus:outline-none focus:border-primary transition-colors resize-y h-24" placeholder="Conte um pouco sobre você..."></textarea>
+                <label class="field-label">Mensagem</label>
+                <textarea class="field-textarea" rows="5" placeholder="Conte um pouco sobre você..."></textarea>
               </div>
             </div>
 
-            <button type="submit" class="w-full btn-primary text-base">📤 Enviar Currículo</button>
+            <button type="submit" class="btn-primary w-full">Enviar Currículo</button>
           </form>
         </div>
       </div>

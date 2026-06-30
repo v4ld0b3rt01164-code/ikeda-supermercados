@@ -1,6 +1,9 @@
 # build output
 dist/
 
+# astro
+.astro/
+
 # dependencies
 node_modules/
 
@@ -21,3 +24,6 @@ Thumbs.db
 
 # wrangler
 .wrangler/
+
+# nested copy
+ikeda-site/
