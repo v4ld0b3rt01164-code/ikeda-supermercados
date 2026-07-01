@@ -1,88 +1,62 @@
-# AGENTS.md - Ikeda Supermercados
-
-## Quick Start
+# Ikeda Supermercados
 
 ```bash
 npm install
-astro dev --background    # Start dev server in background
-astro dev stop            # Stop background server
-astro dev status          # Check server status
-astro dev logs            # View server logs
-```
-
-## Build & Deploy
-
-```bash
-npm run build                           # Production build to dist/
-npm run preview                         # Preview build locally
+npm run dev         # astro dev
+npm run build       # only validation — no lint/typecheck scripts exist
+npm run preview     # preview dist/ locally
 npx wrangler pages deploy dist --project-name=ikeda-supermercados --branch=main --commit-dirty=true
 ```
 
-## Tech Stack
+**Stack:** Astro v7 · Tailwind CSS v4 (`@tailwindcss/vite`) · TypeScript strict · Cloudflare Pages (static)
 
-- **Astro v7** with Tailwind CSS v4 (via @tailwindcss/vite)
-- **TypeScript** (strict mode, extends astro/tsconfigs/strict)
-- **Cloudflare Pages** deployment (wrangler.toml configured)
-- **No lint/typecheck scripts** defined — no eslint/prettier configured
+## Design Tokens (`@theme` in `global.css`)
 
-## Project Structure
+Use `navy`/`gold`/`cream`/`muted` for new work. Legacy `primary`/`secondary`/`surface` exist only for Navbar compatibility.
+
+| Token | Hex | Usage |
+|---|---|---|
+| `--color-navy` | `#0f2a4a` | Sections, cards, headings |
+| `--color-gold` | `#c8a24a` | Refined accent, hover states |
+| `--color-cream` | `#faf7f0` | Warm section backgrounds |
+| `--color-muted` | `#6b7280` | Body text |
+| `--color-whatsapp` | `#25d366` | WhatsApp elements |
+
+Utility classes in `global.css`: `.card`, `.card-hover`, `.btn-primary`, `.btn-secondary`, `.btn-gold`, `.btn-outline`, `.btn-outline-dark`, `.eyebrow`, `.divider-gold`, `.heading-display`, `.field-label`, `.field-input`, `.field-select`, `.field-textarea`, `.reveal*`, `.delay-*`, `.float-animation`, `.text-balance`, `.bg-navy-section`.
+
+## Navbar (fixed, 120px)
+
+- `fixed top-0 h-[120px]` with `will-change-transform` — **do not override** positioning on parent elements
+- Mobile logo: `absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2`
+- Home page: transparent, becomes `bg-white/90 backdrop-blur-lg` on scroll > 50px
+- Other pages: opaque white from load
+- Internal pages hero MUST have `pt-[120px]` (or `pt-32 md:pt-40` if using `PageHero.astro`)
+- Mobile menu has focus trapping + Escape-to-close — preserve when modifying
+
+## iOS / Video
+
+- Hero videos MUST have `playsinline`, `poster` attribute, and `transform: translateZ(0)`
+- Layout: `viewport-fit=cover`, `apple-mobile-web-app-capable`, `black-translucent` status bar
+- Safe-area inset support in `global.css`
+- Videos: H.264 CRF 28, no audio, faststart flag
+
+## Data
+
+Store info lives in `src/data/lojas.ts` (single source). Import from there; do not duplicate.
+
+## Forms (all pages)
+
+No backend wired — forms are presentational. If wiring, add `action` attributes.
+
+## Project layout
 
 ```
 src/
-├── components/        # Astro components (Navbar, Footer, Hero, Features, etc.)
-├── layouts/Layout.astro
-├── pages/             # File-based routing (one dir per route)
-└── styles/global.css  # Tailwind imports + design tokens + custom utilities
-public/
-├── images/
-│   ├── logo.png, logo-3d.png, ifood.png, ikeda.jpg
-│   ├── campanhas/     # Local copies of campaign images
-│   ├── receitas/      # Local copies of recipe images
-│   └── institucional/ # Local copies of institutional images
-├── hero-mobile-compressed.mp4   # ~3.2 MB, H.264 CRF 28
-└── hero-pc-compressed.mp4       # ~2.5 MB, H.264 CRF 28
+├── components/   # 11 Astro components
+├── data/         # lojas.ts (shared store data)
+├── layouts/      # Layout.astro (SEO, OG, Twitter tags)
+├── pages/        # 9 routes, file-based
+└── styles/       # global.css (Tailwind + all utilities)
 ```
 
-## Critical Gotchas
-
-### Navbar Mobile (fixed positioning)
-- Navbar uses `fixed top-0` with `will-change-transform` — do NOT add `position: relative` or `position: absolute` to parent elements
-- Logo uses `absolute` positioning with `top-1/2 -translate-y-1/2` on mobile for centering
-- Home page navbar is transparent by default, becomes opaque on scroll via JS
-- Hero section on index.astro MUST have `pt-[120px]` to account for fixed navbar height
-
-### iOS/iPhone Compatibility
-- All hero videos must have `playsinline` attribute
-- Video element has `transform: translateZ(0)` for GPU compositing
-- Layout has `viewport-fit=cover` and safe-area-inset support
-- `apple-mobile-web-app-capable` and `black-translucent` status bar configured
-
-### Performance
-- All images below the fold use `loading="lazy"`
-- FlipHTML5 iframe (ofertas) uses IntersectionObserver lazy loading
-- External images are served locally (not hotlinked from ikedasupermercados.com.br)
-- Videos compressed with ffmpeg: H.264, CRF 28, no audio, faststart flag
-- Google Fonts: DM Sans (400-800) + Dancing Script (400-700) with display=swap
-
-### Design Tokens (global.css @theme)
-```
---color-primary: #1e40af    (Azul Royal — navbar, headings)
---color-secondary: #facc15  (Amarelo — accents, borders, buttons)
---color-navy: #0f2a4a       (Dark navy — sections, cards)
---color-gold: #c8a24a       (Gold — refined accent)
---color-cream: #faf7f0      (Warm background)
---color-muted: #6b7280      (Gray text)
-```
-
-### Content Pages
-- **Campanhas**: 4 campaigns with images from `/public/images/campanhas/`
-- **Receitas**: 4 recipes with images from `/public/images/receitas/`
-- **Institucional**: 3 images from `/public/images/institucional/`
-- **Ofertas**: FlipHTML5 iframe (`online.fliphtml5.com`)
-- **Contato/Trabalhe Conosco/Cartão Fidelidade**: Forms (no backend — form submission not wired)
-
-## Deployment
-
-- **Production URL**: https://ikeda-supermercados.pages.dev
-- **GitHub repo**: https://github.com/v4ld0b3rt0164-code/ikeda-supermercados
-- **Branch**: `master` (local) → `main` (Cloudflare)
+Dead components removed: `Hero.astro`, `CartaoFidelidade.astro`, `TrabalheConosco.astro` — do not recreate.
