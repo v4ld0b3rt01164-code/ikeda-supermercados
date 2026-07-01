@@ -93,7 +93,7 @@ Para a Cobertura:
           <article class="card overflow-hidden reveal" style={`animation-delay: ${index * 100}ms`}>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-0">
               <div class="lg:col-span-1 h-64 lg:h-auto overflow-hidden">
-                <img src={receita.imagem} alt={receita.nome} class="w-full h-full object-cover" loading="lazy" />
+                <img src={receita.imagem} alt={receita.nome} class="w-full h-full object-cover" loading="lazy" decoding="async" />
               </div>
 
               <div class="lg:col-span-2 p-7 md:p-10">

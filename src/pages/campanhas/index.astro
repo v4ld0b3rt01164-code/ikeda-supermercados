@@ -47,7 +47,7 @@ const campanhas = [
           {campanhas.map((campanha, index) => (
             <article class="card overflow-hidden reveal" style={`animation-delay: ${index * 100}ms`}>
               <div class="relative bg-slate-50">
-                <img src={campanha.imagem} alt={campanha.nome} class="w-full h-auto object-contain" loading="lazy" />
+                <img src={campanha.imagem} alt={campanha.nome} class="w-full h-auto object-contain" loading="lazy" decoding="async" />
                 <span class="absolute top-4 right-4 px-3 py-1.5 bg-[var(--color-navy)]/85 backdrop-blur text-white text-xs font-semibold rounded-full tracking-wide">
                   Finalizada
                 </span>

@@ -15,14 +15,34 @@ const { title } = Astro.props;
     <link rel="dns-prefetch" href="https://online.fliphtml5.com" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content="Ikeda Supermercados - Da nossa família para a sua. Desde 1941 trazendo qualidade e tradição." />
+    <meta name="description" content="Ikeda Supermercados em Dracena e Junqueirópolis/SP. Faça seu pedido pelo iFood e aproveite ofertas exclusivas. Qualidade e tradição desde 1941." />
     <meta name="theme-color" content="#0f2a4a" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="format-detection" content="telephone=no" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://ikeda-supermercados.pages.dev" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content="Ikeda Supermercados em Dracena e Junqueirópolis/SP. Faça seu pedido pelo iFood e aproveite ofertas exclusivas. Qualidade e tradição desde 1941." />
+    <meta property="og:url" content="https://ikeda-supermercados.pages.dev" />
+    <meta property="og:image" content="https://ikeda-supermercados.pages.dev/images/logo-3d.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Ikeda Supermercados" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content="Ikeda Supermercados em Dracena e Junqueirópolis/SP. Faça seu pedido pelo iFood e aproveite ofertas exclusivas. Qualidade e tradição desde 1941." />
+    <meta name="twitter:image" content="https://ikeda-supermercados.pages.dev/images/logo-3d.png" />
+
     <title>{title}</title>
   </head>
   <body>

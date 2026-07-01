@@ -7,7 +7,7 @@ const isHome = Astro.url.pathname === '/';
   isHome ? "bg-transparent" : "bg-white/90 backdrop-blur-lg border-b-2 border-secondary shadow-lg"
 ]}>
   <a href="/" class="flex items-center transition-transform duration-300 hover:scale-110 md:static absolute left-1/2 md:left-auto top-1/2 md:top-auto -translate-x-1/2 md:translate-x-0 -translate-y-1/2 md:translate-y-0">
-    <img src="/images/logo.png" alt="Ikeda Supermercados" class="h-16 md:h-[76px] w-auto" id="nav-logo" />
+    <img src="/images/logo.png" alt="Ikeda Supermercados" class="h-16 md:h-[76px] w-auto" id="nav-logo" decoding="async" />
   </a>
   
   <div class="hidden lg:flex items-center gap-6 ml-auto">
@@ -30,7 +30,7 @@ const isHome = Astro.url.pathname === '/';
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
       </svg>
       Compre Online
-      <img src="/images/ifood.png" alt="iFood" class="h-5 w-auto" />
+      <img src="/images/ifood.png" alt="iFood" class="h-5 w-auto" decoding="async" />
     </a>
   </div>
 
@@ -63,7 +63,7 @@ const isHome = Astro.url.pathname === '/';
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
     </svg>
     Compre Online
-    <img src="/images/ifood.png" alt="iFood" class="h-6 w-auto" />
+    <img src="/images/ifood.png" alt="iFood" class="h-6 w-auto" decoding="async" />
   </a>
 </div>
 
@@ -112,19 +112,52 @@ const isHome = Astro.url.pathname === '/';
   const menu = document.getElementById('mobile-menu');
   const iconOpen = document.getElementById('menu-icon-open');
   const iconClose = document.getElementById('menu-icon-close');
+  const menuLinks = menu?.querySelectorAll('a');
+
+  function trapFocus(e) {
+    if (!menu?.classList.contains('flex')) return;
+    const focusable = menu?.querySelectorAll('a, button');
+    if (!focusable || focusable.length === 0) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.key === 'Tab') {
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+    if (e.key === 'Escape') {
+      closeMenu();
+    }
+  }
+
+  function openMenu() {
+    menu?.classList.remove('hidden');
+    menu?.classList.add('flex');
+    iconOpen?.classList.add('hidden');
+    iconClose?.classList.remove('hidden');
+    document.addEventListener('keydown', trapFocus);
+    menuLinks?.[0]?.focus();
+  }
+
+  function closeMenu() {
+    menu?.classList.add('hidden');
+    menu?.classList.remove('flex');
+    iconOpen?.classList.remove('hidden');
+    iconClose?.classList.add('hidden');
+    document.removeEventListener('keydown', trapFocus);
+    toggle?.focus();
+  }
 
   toggle?.addEventListener('click', () => {
     const isOpen = menu?.classList.contains('flex');
     if (isOpen) {
-      menu?.classList.add('hidden');
-      menu?.classList.remove('flex');
-      iconOpen?.classList.remove('hidden');
-      iconClose?.classList.add('hidden');
+      closeMenu();
     } else {
-      menu?.classList.remove('hidden');
-      menu?.classList.add('flex');
-      iconOpen?.classList.add('hidden');
-      iconClose?.classList.remove('hidden');
+      openMenu();
     }
   });
 </script>
